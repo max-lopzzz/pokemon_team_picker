@@ -39,7 +39,7 @@ python main.py
 We welcome contributions from anyone interested in enhancing this project! If you have experience in Python programming and are interested in helping, here are a few specific areas where we need assistance:
 1. **User Input for Pokémon:** Help us create a program that allows users to input their Pokémon, including details such as type, level, and abilities.
 2. **Comparison Functionality:** Assist in developing a program that compares the user's Pokémon with the gym leader's Pokémon to identify strengths and weaknesses.
-3. **Team Recommendation System:* Collaborate on creating a system that recommends the best six Pokémon (or fewer, if less are available) for users to challenge a gym leader based on type advantages, levels, and abilities.
+3. **Team Recommendation System:** Collaborate on creating a system that recommends the best six Pokémon (or fewer, if less are available) for users to challenge a gym leader based on type advantages, levels, and abilities.
 
 If you're interested in contributing, please open an issue or submit a pull request. Your help would be greatly appreciated!
 
