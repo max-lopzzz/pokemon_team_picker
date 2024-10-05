@@ -1,0 +1,953 @@
+Name;Accuracy;BasePower;Category;IsNonstandard;PP;Priority;CritRatio;Target;Type
+10,000,000 Volt Thunderbolt;100;195;Special;Past;1;0;3;normal;Electric
+Absorb;100;20;Special;;25;0;1;normal;Grass
+Accelerock;100;40;Physical;;20;1;1;normal;Rock
+Acid;100;40;Special;;30;0;1;allAdjacentFoes;Poison
+Acid Armor;100;0;Status;;20;0;1;self;Poison
+Acid Downpour;100;1;Physical;Past;1;0;1;normal;Poison
+Acid Spray;100;40;Special;;20;0;1;normal;Poison
+Acrobatics;100;55;Physical;;15;0;1;any;Flying
+Acupressure;100;0;Status;;30;0;1;adjacentAllyOrSelf;Normal
+Aerial Ace;100;60;Physical;;20;0;1;any;Flying
+Aeroblast;95;100;Special;;5;0;2;any;Flying
+After You;100;0;Status;;15;0;1;normal;Normal
+Agility;100;0;Status;;30;0;1;self;Psychic
+Air Cutter;95;60;Special;;25;0;2;allAdjacentFoes;Flying
+Air Slash;95;75;Special;;15;0;1;any;Flying
+All-Out Pummeling;100;1;Physical;Past;1;0;1;normal;Fighting
+Alluring Voice;100;80;Special;;10;0;1;normal;Fairy
+Ally Switch;100;0;Status;;15;2;1;self;Psychic
+Amnesia;100;0;Status;;20;0;1;self;Psychic
+Anchor Shot;100;80;Physical;Past;20;0;1;normal;Steel
+Ancient Power;100;60;Special;;5;0;1;normal;Rock
+Apple Acid;100;80;Special;;10;0;1;normal;Grass
+Aqua Cutter;100;70;Physical;;20;0;2;normal;Water
+Aqua Jet;100;40;Physical;;20;1;1;normal;Water
+Aqua Ring;100;0;Status;;20;0;1;self;Water
+Aqua Step;100;80;Physical;;10;0;1;normal;Water
+Aqua Tail;90;90;Physical;;10;0;1;normal;Water
+Armor Cannon;100;120;Special;;5;0;1;normal;Fire
+Arm Thrust;100;15;Physical;;20;0;1;normal;Fighting
+Aromatherapy;100;0;Status;Past;5;0;1;allyTeam;Grass
+Aromatic Mist;100;0;Status;;20;0;1;adjacentAlly;Fairy
+Assist;100;0;Status;Past;20;0;1;self;Normal
+Assurance;100;60;Physical;;10;0;1;normal;Dark
+Astonish;100;30;Physical;;15;0;1;normal;Ghost
+Astral Barrage;100;120;Special;;5;0;1;allAdjacentFoes;Ghost
+Attack Order;100;90;Physical;;15;0;2;normal;Bug
+Attract;100;0;Status;;15;0;1;normal;Normal
+Aura Sphere;100;80;Special;;20;0;1;any;Fighting
+Aura Wheel;100;110;Physical;;10;0;1;normal;Electric
+Aurora Beam;100;65;Special;;20;0;1;normal;Ice
+Aurora Veil;100;0;Status;;20;0;1;allySide;Ice
+Autotomize;100;0;Status;Past;15;0;1;self;Steel
+Avalanche;100;60;Physical;;10;-4;1;normal;Ice
+Axe Kick;90;120;Physical;;10;0;1;normal;Fighting
+Baby-Doll Eyes;100;0;Status;;30;1;1;normal;Fairy
+Baddy Bad;95;80;Special;LGPE;15;0;1;normal;Dark
+Baneful Bunker;100;0;Status;;10;4;1;self;Poison
+Barb Barrage;100;60;Physical;;10;0;1;normal;Poison
+Barrage;85;15;Physical;Past;20;0;1;normal;Normal
+Barrier;100;0;Status;Past;20;0;1;self;Psychic
+Baton Pass;100;0;Status;;40;0;1;self;Normal
+Beak Blast;100;100;Physical;;15;-3;1;normal;Flying
+Beat Up;100;0;Physical;;10;0;1;normal;Dark
+Behemoth Bash;100;100;Physical;;5;0;1;normal;Steel
+Behemoth Blade;100;100;Physical;;5;0;1;normal;Steel
+Belch;90;120;Special;;10;0;1;normal;Poison
+Belly Drum;100;0;Status;;10;0;1;self;Normal
+Bestow;100;0;Status;Past;15;0;1;normal;Normal
+Bide;100;0;Physical;Past;10;1;1;self;Normal
+Bind;85;15;Physical;;20;0;1;normal;Normal
+Bite;100;60;Physical;;25;0;1;normal;Dark
+Bitter Blade;100;90;Physical;;10;0;1;normal;Fire
+Bitter Malice;100;75;Special;;10;0;1;normal;Ghost
+Black Hole Eclipse;100;1;Physical;Past;1;0;1;normal;Dark
+Blast Burn;90;150;Special;;5;0;1;normal;Fire
+Blaze Kick;90;85;Physical;;10;0;2;normal;Fire
+Blazing Torque;100;80;Physical;Unobtainable;10;0;1;normal;Fire
+Bleakwind Storm;80;100;Special;;10;0;1;allAdjacentFoes;Flying
+Blizzard;70;110;Special;;5;0;1;allAdjacentFoes;Ice
+Block;100;0;Status;;5;0;1;normal;Normal
+Blood Moon;100;140;Special;;5;0;1;normal;Normal
+Bloom Doom;100;1;Physical;Past;1;0;1;normal;Grass
+Blue Flare;85;130;Special;;5;0;1;normal;Fire
+Body Press;100;80;Physical;;10;0;1;normal;Fighting
+Body Slam;100;85;Physical;;15;0;1;normal;Normal
+Bolt Beak;100;85;Physical;Past;10;0;1;normal;Electric
+Bolt Strike;85;130;Physical;;5;0;1;normal;Electric
+Bone Club;85;65;Physical;Past;20;0;1;normal;Ground
+Bonemerang;90;50;Physical;Past;10;0;1;normal;Ground
+Bone Rush;90;25;Physical;;10;0;1;normal;Ground
+Boomburst;100;140;Special;;10;0;1;allAdjacent;Normal
+Bounce;85;85;Physical;;5;0;1;any;Flying
+Bouncy Bubble;100;60;Special;LGPE;20;0;1;normal;Water
+Branch Poke;100;40;Physical;;40;0;1;normal;Grass
+Brave Bird;100;120;Physical;;15;0;1;any;Flying
+Breaking Swipe;100;60;Physical;;15;0;1;allAdjacentFoes;Dragon
+Breakneck Blitz;100;1;Physical;Past;1;0;1;normal;Normal
+Brick Break;100;75;Physical;;15;0;1;normal;Fighting
+Brine;100;65;Special;;10;0;1;normal;Water
+Brutal Swing;100;60;Physical;;20;0;1;allAdjacent;Dark
+Bubble;100;40;Special;Past;30;0;1;allAdjacentFoes;Water
+Bubble Beam;100;65;Special;;20;0;1;normal;Water
+Bug Bite;100;60;Physical;;20;0;1;normal;Bug
+Bug Buzz;100;90;Special;;10;0;1;normal;Bug
+Bulk Up;100;0;Status;;20;0;1;self;Fighting
+Bulldoze;100;60;Physical;;20;0;1;allAdjacent;Ground
+Bullet Punch;100;40;Physical;;30;1;1;normal;Steel
+Bullet Seed;100;25;Physical;;30;0;1;normal;Grass
+Burning Bulwark;100;0;Status;;10;4;1;self;Fire
+Burning Jealousy;100;70;Special;;5;0;1;allAdjacentFoes;Fire
+Burn Up;100;130;Special;Unobtainable;5;0;1;normal;Fire
+Buzzy Buzz;100;60;Special;LGPE;20;0;1;normal;Electric
+Calm Mind;100;0;Status;;20;0;1;self;Psychic
+Camouflage;100;0;Status;Past;20;0;1;self;Normal
+Captivate;100;0;Status;Past;20;0;1;allAdjacentFoes;Normal
+Catastropika;100;210;Physical;Past;1;0;1;normal;Electric
+Ceaseless Edge;90;65;Physical;;15;0;1;normal;Dark
+Celebrate;100;0;Status;;40;0;1;self;Normal
+Charge;100;0;Status;;20;0;1;self;Electric
+Charge Beam;90;50;Special;;10;0;1;normal;Electric
+Charm;100;0;Status;;20;0;1;normal;Fairy
+Chatter;100;65;Special;Past;20;0;1;any;Flying
+Chilling Water;100;50;Special;;20;0;1;normal;Water
+Chilly Reception;100;0;Status;;10;0;1;all;Ice
+Chip Away;100;70;Physical;Past;20;0;1;normal;Normal
+Chloroblast;95;150;Special;;5;0;1;normal;Grass
+Circle Throw;90;60;Physical;;10;-6;1;normal;Fighting
+Clamp;85;35;Physical;Past;15;0;1;normal;Water
+Clanging Scales;100;110;Special;;5;0;1;allAdjacentFoes;Dragon
+Clangorous Soul;100;0;Status;;5;0;1;self;Dragon
+Clangorous Soulblaze;100;185;Special;Past;1;0;1;allAdjacentFoes;Dragon
+Clear Smog;100;50;Special;;15;0;1;normal;Poison
+Close Combat;100;120;Physical;;5;0;1;normal;Fighting
+Coaching;100;0;Status;;10;0;1;adjacentAlly;Fighting
+Coil;100;0;Status;;20;0;1;self;Poison
+Collision Course;100;100;Physical;;5;0;1;normal;Fighting
+Combat Torque;100;100;Physical;Unobtainable;10;0;1;normal;Fighting
+Comet Punch;85;18;Physical;Past;15;0;1;normal;Normal
+Comeuppance;100;0;Physical;;10;0;1;scripted;Dark
+Confide;100;0;Status;;20;0;1;normal;Normal
+Confuse Ray;100;0;Status;;10;0;1;normal;Ghost
+Confusion;100;50;Special;;25;0;1;normal;Psychic
+Constrict;100;10;Physical;Past;35;0;1;normal;Normal
+Continental Crush;100;1;Physical;Past;1;0;1;normal;Rock
+Conversion;100;0;Status;;30;0;1;self;Normal
+Conversion 2;100;0;Status;;30;0;1;normal;Normal
+Copycat;100;0;Status;;20;0;1;self;Normal
+Core Enforcer;100;100;Special;Past;10;0;1;allAdjacentFoes;Dragon
+Corkscrew Crash;100;1;Physical;Past;1;0;1;normal;Steel
+Corrosive Gas;100;0;Status;Unobtainable;40;0;1;allAdjacent;Poison
+Cosmic Power;100;0;Status;;20;0;1;self;Psychic
+Cotton Guard;100;0;Status;;10;0;1;self;Grass
+Cotton Spore;100;0;Status;;40;0;1;allAdjacentFoes;Grass
+Counter;100;0;Physical;;20;-5;1;scripted;Fighting
+Court Change;100;0;Status;;10;0;1;all;Normal
+Covet;100;60;Physical;;25;0;1;normal;Normal
+Crabhammer;90;100;Physical;;10;0;2;normal;Water
+Crafty Shield;100;0;Status;Past;10;3;1;allySide;Fairy
+Cross Chop;80;100;Physical;;5;0;2;normal;Fighting
+Cross Poison;100;70;Physical;;20;0;2;normal;Poison
+Crunch;100;80;Physical;;15;0;1;normal;Dark
+Crush Claw;95;75;Physical;;10;0;1;normal;Normal
+Crush Grip;100;0;Physical;;5;0;1;normal;Normal
+Curse;100;0;Status;;10;0;1;normal;Ghost
+Cut;95;50;Physical;Unobtainable;30;0;1;normal;Normal
+Darkest Lariat;100;85;Physical;;10;0;1;normal;Dark
+Dark Pulse;100;80;Special;;15;0;1;any;Dark
+Dark Void;50;0;Status;;10;0;1;allAdjacentFoes;Dark
+Dazzling Gleam;100;80;Special;;10;0;1;allAdjacentFoes;Fairy
+Decorate;100;0;Status;;15;0;1;normal;Fairy
+Defend Order;100;0;Status;;10;0;1;self;Bug
+Defense Curl;100;0;Status;;40;0;1;self;Normal
+Defog;100;0;Status;;15;0;1;normal;Flying
+Destiny Bond;100;0;Status;;5;0;1;self;Ghost
+Detect;100;0;Status;;5;4;1;self;Fighting
+Devastating Drake;100;1;Physical;Past;1;0;1;normal;Dragon
+Diamond Storm;95;100;Physical;;5;0;1;allAdjacentFoes;Rock
+Dig;100;80;Physical;;10;0;1;normal;Ground
+Disable;100;0;Status;;20;0;1;normal;Normal
+Disarming Voice;100;40;Special;;15;0;1;allAdjacentFoes;Fairy
+Discharge;100;80;Special;;15;0;1;allAdjacent;Electric
+Dire Claw;100;80;Physical;;15;0;1;normal;Poison
+Dive;100;80;Physical;;10;0;1;normal;Water
+Dizzy Punch;100;70;Physical;Past;10;0;1;normal;Normal
+Doodle;100;0;Status;;10;0;1;adjacentFoe;Normal
+Doom Desire;100;140;Special;;5;0;1;normal;Steel
+Double-Edge;100;120;Physical;;15;0;1;normal;Normal
+Double Hit;90;35;Physical;;10;0;1;normal;Normal
+Double Iron Bash;100;60;Physical;Past;5;0;1;normal;Steel
+Double Kick;100;30;Physical;;30;0;1;normal;Fighting
+Double Shock;100;120;Physical;;5;0;1;normal;Electric
+Double Slap;85;15;Physical;Past;10;0;1;normal;Normal
+Double Team;100;0;Status;;15;0;1;self;Normal
+Draco Meteor;90;130;Special;;5;0;1;normal;Dragon
+Dragon Ascent;100;120;Physical;;5;0;1;any;Flying
+Dragon Breath;100;60;Special;;20;0;1;normal;Dragon
+Dragon Cheer;100;0;Status;;15;0;1;adjacentAlly;Dragon
+Dragon Claw;100;80;Physical;;15;0;1;normal;Dragon
+Dragon Dance;100;0;Status;;20;0;1;self;Dragon
+Dragon Darts;100;50;Physical;;10;0;1;normal;Dragon
+Dragon Energy;100;150;Special;;5;0;1;allAdjacentFoes;Dragon
+Dragon Hammer;100;90;Physical;;15;0;1;normal;Dragon
+Dragon Pulse;100;85;Special;;10;0;1;any;Dragon
+Dragon Rage;100;0;Special;Past;10;0;1;normal;Dragon
+Dragon Rush;75;100;Physical;;10;0;1;normal;Dragon
+Dragon Tail;90;60;Physical;;10;-6;1;normal;Dragon
+Draining Kiss;100;50;Special;;10;0;1;normal;Fairy
+Drain Punch;100;75;Physical;;10;0;1;normal;Fighting
+Dream Eater;100;100;Special;;15;0;1;normal;Psychic
+Drill Peck;100;80;Physical;;20;0;1;any;Flying
+Drill Run;95;80;Physical;;10;0;2;normal;Ground
+Drum Beating;100;80;Physical;;10;0;1;normal;Grass
+Dual Chop;90;40;Physical;Past;15;0;1;normal;Dragon
+Dual Wingbeat;90;40;Physical;;10;0;1;normal;Flying
+Dynamax Cannon;100;100;Special;;5;0;1;normal;Dragon
+Dynamic Punch;50;100;Physical;;5;0;1;normal;Fighting
+Earth Power;100;90;Special;;10;0;1;normal;Ground
+Earthquake;100;100;Physical;;10;0;1;allAdjacent;Ground
+Echoed Voice;100;40;Special;;15;0;1;normal;Normal
+Eerie Impulse;100;0;Status;;15;0;1;normal;Electric
+Eerie Spell;100;80;Special;;5;0;1;normal;Psychic
+Egg Bomb;75;100;Physical;Past;10;0;1;normal;Normal
+Electric Terrain;100;0;Status;;10;0;1;all;Electric
+Electrify;100;0;Status;Past;20;0;1;normal;Electric
+Electro Ball;100;0;Special;;10;0;1;normal;Electric
+Electro Drift;100;100;Special;;5;0;1;normal;Electric
+Electro Shot;100;130;Special;;10;0;1;normal;Electric
+Electroweb;95;55;Special;;15;0;1;allAdjacentFoes;Electric
+Embargo;100;0;Status;Past;15;0;1;normal;Dark
+Ember;100;40;Special;;25;0;1;normal;Fire
+Encore;100;0;Status;;5;0;1;normal;Normal
+Endeavor;100;0;Physical;;5;0;1;normal;Normal
+Endure;100;0;Status;;10;4;1;self;Normal
+Energy Ball;100;90;Special;;10;0;1;normal;Grass
+Entrainment;100;0;Status;;15;0;1;normal;Normal
+Eruption;100;150;Special;;5;0;1;allAdjacentFoes;Fire
+Esper Wing;100;80;Special;;10;0;2;normal;Psychic
+Eternabeam;90;160;Special;Past;5;0;1;normal;Dragon
+Expanding Force;100;80;Special;;10;0;1;normal;Psychic
+Explosion;100;250;Physical;;5;0;1;allAdjacent;Normal
+Extrasensory;100;80;Special;;20;0;1;normal;Psychic
+Extreme Evoboost;100;0;Status;Past;1;0;1;self;Normal
+Extreme Speed;100;80;Physical;;5;2;1;normal;Normal
+Facade;100;70;Physical;;20;0;1;normal;Normal
+Fairy Lock;100;0;Status;;10;0;1;all;Fairy
+Fairy Wind;100;40;Special;;30;0;1;normal;Fairy
+Fake Out;100;40;Physical;;10;3;1;normal;Normal
+Fake Tears;100;0;Status;;20;0;1;normal;Dark
+False Surrender;100;80;Physical;;10;0;1;normal;Dark
+False Swipe;100;40;Physical;;40;0;1;normal;Normal
+Feather Dance;100;0;Status;;15;0;1;normal;Flying
+Feint;100;30;Physical;;10;2;1;normal;Normal
+Feint Attack;100;60;Physical;Past;20;0;1;normal;Dark
+Fell Stinger;100;50;Physical;;25;0;1;normal;Bug
+Fickle Beam;100;80;Special;;5;0;1;normal;Dragon
+Fiery Dance;100;80;Special;;10;0;1;normal;Fire
+Fiery Wrath;100;90;Special;;10;0;1;allAdjacentFoes;Dark
+Fillet Away;100;0;Status;;10;0;1;self;Normal
+Final Gambit;100;0;Special;;5;0;1;normal;Fighting
+Fire Blast;85;110;Special;;5;0;1;normal;Fire
+Fire Fang;95;65;Physical;;15;0;1;normal;Fire
+Fire Lash;100;80;Physical;;15;0;1;normal;Fire
+Fire Pledge;100;80;Special;;10;0;1;normal;Fire
+Fire Punch;100;75;Physical;;15;0;1;normal;Fire
+Fire Spin;85;35;Special;;15;0;1;normal;Fire
+First Impression;100;90;Physical;;10;2;1;normal;Bug
+Fishious Rend;100;85;Physical;Past;10;0;1;normal;Water
+Fissure;30;0;Physical;;5;0;1;normal;Ground
+Flail;100;0;Physical;;15;0;1;normal;Normal
+Flame Burst;100;70;Special;Past;15;0;1;normal;Fire
+Flame Charge;100;50;Physical;;20;0;1;normal;Fire
+Flame Wheel;100;60;Physical;;25;0;1;normal;Fire
+Flamethrower;100;90;Special;;15;0;1;normal;Fire
+Flare Blitz;100;120;Physical;;15;0;1;normal;Fire
+Flash;100;0;Status;Past;20;0;1;normal;Normal
+Flash Cannon;100;80;Special;;10;0;1;normal;Steel
+Flatter;100;0;Status;;15;0;1;normal;Dark
+Fleur Cannon;90;130;Special;;5;0;1;normal;Fairy
+Fling;100;0;Physical;;10;0;1;normal;Dark
+Flip Turn;100;60;Physical;;20;0;1;normal;Water
+Floaty Fall;95;90;Physical;LGPE;15;0;1;normal;Flying
+Floral Healing;100;0;Status;;10;0;1;normal;Fairy
+Flower Shield;100;0;Status;Past;10;0;1;all;Fairy
+Flower Trick;100;70;Physical;;10;0;1;normal;Grass
+Fly;95;90;Physical;;15;0;1;any;Flying
+Flying Press;95;100;Physical;;10;0;1;any;Fighting
+Focus Blast;70;120;Special;;5;0;1;normal;Fighting
+Focus Energy;100;0;Status;;30;0;1;self;Normal
+Focus Punch;100;150;Physical;;20;-3;1;normal;Fighting
+Follow Me;100;0;Status;;20;2;1;self;Normal
+Force Palm;100;60;Physical;;10;0;1;normal;Fighting
+Foresight;100;0;Status;Past;40;0;1;normal;Normal
+Forest's Curse;100;0;Status;;20;0;1;normal;Grass
+Foul Play;100;95;Physical;;15;0;1;normal;Dark
+Freeze-Dry;100;70;Special;;20;0;1;normal;Ice
+Freeze Shock;90;140;Physical;;5;0;1;normal;Ice
+Freezing Glare;100;90;Special;;10;0;1;normal;Psychic
+Freezy Frost;90;100;Special;LGPE;10;0;1;normal;Ice
+Frenzy Plant;90;150;Special;;5;0;1;normal;Grass
+Frost Breath;90;60;Special;;10;0;1;normal;Ice
+Frustration;100;0;Physical;Past;20;0;1;normal;Normal
+Fury Attack;85;15;Physical;;20;0;1;normal;Normal
+Fury Cutter;95;40;Physical;;20;0;1;normal;Bug
+Fury Swipes;80;18;Physical;;15;0;1;normal;Normal
+Fusion Bolt;100;100;Physical;;5;0;1;normal;Electric
+Fusion Flare;100;100;Special;;5;0;1;normal;Fire
+Future Sight;100;120;Special;;10;0;1;normal;Psychic
+Gastro Acid;100;0;Status;;10;0;1;normal;Poison
+Gear Grind;85;50;Physical;Past;15;0;1;normal;Steel
+Gear Up;100;0;Status;Past;20;0;1;allySide;Steel
+Genesis Supernova;100;185;Special;Past;1;0;1;normal;Psychic
+Geomancy;100;0;Status;Past;10;0;1;self;Fairy
+Giga Drain;100;75;Special;;10;0;1;normal;Grass
+Giga Impact;90;150;Physical;;5;0;1;normal;Normal
+Gigaton Hammer;100;160;Physical;;5;0;1;normal;Steel
+Gigavolt Havoc;100;1;Physical;Past;1;0;1;normal;Electric
+Glacial Lance;100;120;Physical;;5;0;1;allAdjacentFoes;Ice
+Glaciate;95;65;Special;;10;0;1;allAdjacentFoes;Ice
+Glaive Rush;100;120;Physical;;5;0;1;normal;Dragon
+Glare;100;0;Status;;30;0;1;normal;Normal
+Glitzy Glow;95;80;Special;LGPE;15;0;1;normal;Psychic
+G-Max Befuddle;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Bug
+G-Max Cannonade;100;10;Physical;Gigantamax;10;0;1;adjacentFoe;Water
+G-Max Centiferno;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Fire
+G-Max Chi Strike;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Fighting
+G-Max Cuddle;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Normal
+G-Max Depletion;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Dragon
+G-Max Drum Solo;100;160;Physical;Gigantamax;5;0;1;adjacentFoe;Grass
+G-Max Finale;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Fairy
+G-Max Fireball;100;160;Physical;Gigantamax;5;0;1;adjacentFoe;Fire
+G-Max Foam Burst;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Water
+G-Max Gold Rush;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Normal
+G-Max Gravitas;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Psychic
+G-Max Hydrosnipe;100;160;Physical;Gigantamax;5;0;1;adjacentFoe;Water
+G-Max Malodor;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Poison
+G-Max Meltdown;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Steel
+G-Max One Blow;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Dark
+G-Max Rapid Flow;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Water
+G-Max Replenish;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Normal
+G-Max Resonance;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Ice
+G-Max Sandblast;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Ground
+G-Max Smite;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Fairy
+G-Max Snooze;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Dark
+G-Max Steelsurge;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Steel
+G-Max Stonesurge;100;10;Physical;Gigantamax;5;0;1;adjacentFoe;Water
+G-Max Stun Shock;100;10;Physical;Gigantamax;10;0;1;adjacentFoe;Electric
+G-Max Sweetness;100;10;Physical;Gigantamax;10;0;1;adjacentFoe;Grass
+G-Max Tartness;100;10;Physical;Gigantamax;10;0;1;adjacentFoe;Grass
+G-Max Terror;100;10;Physical;Gigantamax;10;0;1;adjacentFoe;Ghost
+G-Max Vine Lash;100;10;Physical;Gigantamax;10;0;1;adjacentFoe;Grass
+G-Max Volcalith;100;10;Physical;Gigantamax;10;0;1;adjacentFoe;Rock
+G-Max Volt Crash;100;10;Physical;Gigantamax;10;0;1;adjacentFoe;Electric
+G-Max Wildfire;100;10;Physical;Gigantamax;10;0;1;adjacentFoe;Fire
+G-Max Wind Rage;100;10;Physical;Gigantamax;10;0;1;adjacentFoe;Flying
+Grass Knot;100;0;Special;;20;0;1;normal;Grass
+Grass Pledge;100;80;Special;;10;0;1;normal;Grass
+Grass Whistle;55;0;Status;Past;15;0;1;normal;Grass
+Grassy Glide;100;55;Physical;;20;0;1;normal;Grass
+Grassy Terrain;100;0;Status;;10;0;1;all;Grass
+Grav Apple;100;80;Physical;;10;0;1;normal;Grass
+Gravity;100;0;Status;;5;0;1;all;Psychic
+Growl;100;0;Status;;40;0;1;allAdjacentFoes;Normal
+Growth;100;0;Status;;20;0;1;self;Normal
+Grudge;100;0;Status;Past;5;0;1;self;Ghost
+Guardian of Alola;100;0;Special;Past;1;0;1;normal;Fairy
+Guard Split;100;0;Status;;10;0;1;normal;Psychic
+Guard Swap;100;0;Status;;10;0;1;normal;Psychic
+Guillotine;30;0;Physical;;5;0;1;normal;Normal
+Gunk Shot;80;120;Physical;;5;0;1;normal;Poison
+Gust;100;40;Special;;35;0;1;any;Flying
+Gyro Ball;100;0;Physical;;5;0;1;normal;Steel
+Hail;100;0;Status;Past;10;0;1;all;Ice
+Hammer Arm;90;100;Physical;;10;0;1;normal;Fighting
+Happy Hour;100;0;Status;;30;0;1;allySide;Normal
+Harden;100;0;Status;;30;0;1;self;Normal
+Hard Press;100;0;Physical;;10;0;1;normal;Steel
+Haze;100;0;Status;;30;0;1;all;Ice
+Headbutt;100;70;Physical;;15;0;1;normal;Normal
+Head Charge;100;120;Physical;Past;15;0;1;normal;Normal
+Headlong Rush;100;120;Physical;;5;0;1;normal;Ground
+Head Smash;80;150;Physical;;5;0;1;normal;Rock
+Heal Bell;100;0;Status;;5;0;1;allyTeam;Normal
+Heal Block;100;0;Status;Past;15;0;1;allAdjacentFoes;Psychic
+Healing Wish;100;0;Status;;10;0;1;self;Psychic
+Heal Order;100;0;Status;Past;10;0;1;self;Bug
+Heal Pulse;100;0;Status;;10;0;1;any;Psychic
+Heart Stamp;100;60;Physical;Past;25;0;1;normal;Psychic
+Heart Swap;100;0;Status;;10;0;1;normal;Psychic
+Heat Crash;100;0;Physical;;10;0;1;normal;Fire
+Heat Wave;90;95;Special;;10;0;1;allAdjacentFoes;Fire
+Heavy Slam;100;0;Physical;;10;0;1;normal;Steel
+Helping Hand;100;0;Status;;20;5;1;adjacentAlly;Normal
+Hex;100;65;Special;;10;0;1;normal;Ghost
+Hidden Power;100;60;Special;Past;15;0;1;normal;Normal
+Hidden Power Bug;100;60;Special;Past;15;0;1;normal;Bug
+Hidden Power Dark;100;60;Special;Past;15;0;1;normal;Dark
+Hidden Power Dragon;100;60;Special;Past;15;0;1;normal;Dragon
+Hidden Power Electric;100;60;Special;Past;15;0;1;normal;Electric
+Hidden Power Fighting;100;60;Special;Past;15;0;1;normal;Fighting
+Hidden Power Fire;100;60;Special;Past;15;0;1;normal;Fire
+Hidden Power Flying;100;60;Special;Past;15;0;1;normal;Flying
+Hidden Power Ghost;100;60;Special;Past;15;0;1;normal;Ghost
+Hidden Power Grass;100;60;Special;Past;15;0;1;normal;Grass
+Hidden Power Ground;100;60;Special;Past;15;0;1;normal;Ground
+Hidden Power Ice;100;60;Special;Past;15;0;1;normal;Ice
+Hidden Power Poison;100;60;Special;Past;15;0;1;normal;Poison
+Hidden Power Psychic;100;60;Special;Past;15;0;1;normal;Psychic
+Hidden Power Rock;100;60;Special;Past;15;0;1;normal;Rock
+Hidden Power Steel;100;60;Special;Past;15;0;1;normal;Steel
+Hidden Power Water;100;60;Special;Past;15;0;1;normal;Water
+High Horsepower;95;95;Physical;;10;0;1;normal;Ground
+High Jump Kick;90;130;Physical;;10;0;1;normal;Fighting
+Hold Back;100;40;Physical;Unobtainable;40;0;1;normal;Normal
+Hold Hands;100;0;Status;Unobtainable;40;0;1;adjacentAlly;Normal
+Hone Claws;100;0;Status;;15;0;1;self;Dark
+Horn Attack;100;65;Physical;;25;0;1;normal;Normal
+Horn Drill;30;0;Physical;;5;0;1;normal;Normal
+Horn Leech;100;75;Physical;;10;0;1;normal;Grass
+Howl;100;0;Status;;40;0;1;allies;Normal
+Hurricane;70;110;Special;;10;0;1;any;Flying
+Hydro Cannon;90;150;Special;;5;0;1;normal;Water
+Hydro Pump;80;110;Special;;5;0;1;normal;Water
+Hydro Steam;100;80;Special;;15;0;1;normal;Water
+Hydro Vortex;100;1;Physical;Past;1;0;1;normal;Water
+Hyper Beam;90;150;Special;;5;0;1;normal;Normal
+Hyper Drill;100;100;Physical;;5;0;1;normal;Normal
+Hyper Fang;90;80;Physical;Past;15;0;1;normal;Normal
+Hyperspace Fury;100;100;Physical;;5;0;1;normal;Dark
+Hyperspace Hole;100;80;Special;;5;0;1;normal;Psychic
+Hyper Voice;100;90;Special;;10;0;1;allAdjacentFoes;Normal
+Hypnosis;60;0;Status;;20;0;1;normal;Psychic
+Ice Ball;90;30;Physical;Past;20;0;1;normal;Ice
+Ice Beam;100;90;Special;;10;0;1;normal;Ice
+Ice Burn;90;140;Special;;5;0;1;normal;Ice
+Ice Fang;95;65;Physical;;15;0;1;normal;Ice
+Ice Hammer;90;100;Physical;;10;0;1;normal;Ice
+Ice Punch;100;75;Physical;;15;0;1;normal;Ice
+Ice Shard;100;40;Physical;;30;1;1;normal;Ice
+Ice Spinner;100;80;Physical;;15;0;1;normal;Ice
+Icicle Crash;90;85;Physical;;10;0;1;normal;Ice
+Icicle Spear;100;25;Physical;;30;0;1;normal;Ice
+Icy Wind;95;55;Special;;15;0;1;allAdjacentFoes;Ice
+Imprison;100;0;Status;;10;0;1;self;Psychic
+Incinerate;100;60;Special;;15;0;1;allAdjacentFoes;Fire
+Infernal Parade;100;60;Special;;15;0;1;normal;Ghost
+Inferno;50;100;Special;;5;0;1;normal;Fire
+Inferno Overdrive;100;1;Physical;Past;1;0;1;normal;Fire
+Infestation;100;20;Special;;20;0;1;normal;Bug
+Ingrain;100;0;Status;;20;0;1;self;Grass
+Instruct;100;0;Status;;15;0;1;normal;Psychic
+Ion Deluge;100;0;Status;Past;25;1;1;all;Electric
+Iron Defense;100;0;Status;;15;0;1;self;Steel
+Iron Head;100;80;Physical;;15;0;1;normal;Steel
+Iron Tail;75;100;Physical;;15;0;1;normal;Steel
+Ivy Cudgel;100;100;Physical;;10;0;2;normal;Grass
+Jaw Lock;100;80;Physical;;10;0;1;normal;Dark
+Jet Punch;100;60;Physical;;15;1;1;normal;Water
+Judgment;100;100;Special;;10;0;1;normal;Normal
+Jump Kick;95;100;Physical;Past;10;0;1;normal;Fighting
+Jungle Healing;100;0;Status;;10;0;1;allies;Grass
+Karate Chop;100;50;Physical;Past;25;0;2;normal;Fighting
+Kinesis;80;0;Status;Past;15;0;1;normal;Psychic
+King's Shield;100;0;Status;Past;10;4;1;self;Steel
+Knock Off;100;65;Physical;;20;0;1;normal;Dark
+Kowtow Cleave;100;85;Physical;;10;0;1;normal;Dark
+Land's Wrath;100;90;Physical;Past;10;0;1;allAdjacentFoes;Ground
+Laser Focus;100;0;Status;Past;30;0;1;self;Normal
+Lash Out;100;75;Physical;;5;0;1;normal;Dark
+Last Resort;100;140;Physical;;5;0;1;normal;Normal
+Last Respects;100;50;Physical;;10;0;1;normal;Ghost
+Lava Plume;100;80;Special;;15;0;1;allAdjacent;Fire
+Leafage;100;40;Physical;;40;0;1;normal;Grass
+Leaf Blade;100;90;Physical;;15;0;2;normal;Grass
+Leaf Storm;90;130;Special;;5;0;1;normal;Grass
+Leaf Tornado;90;65;Special;Past;10;0;1;normal;Grass
+Leech Life;100;80;Physical;;10;0;1;normal;Bug
+Leech Seed;90;0;Status;;10;0;1;normal;Grass
+Leer;100;0;Status;;30;0;1;allAdjacentFoes;Normal
+Let's Snuggle Forever;100;190;Physical;Past;1;0;1;normal;Fairy
+Lick;100;30;Physical;;30;0;1;normal;Ghost
+Life Dew;100;0;Status;;10;0;1;allies;Water
+Light of Ruin;90;140;Special;Past;5;0;1;normal;Fairy
+Light Screen;100;0;Status;;30;0;1;allySide;Psychic
+Light That Burns the Sky;100;200;Special;Past;1;0;1;normal;Psychic
+Liquidation;100;85;Physical;;10;0;1;normal;Water
+Lock-On;100;0;Status;;5;0;1;normal;Normal
+Lovely Kiss;75;0;Status;Past;10;0;1;normal;Normal
+Low Kick;100;0;Physical;;20;0;1;normal;Fighting
+Low Sweep;100;65;Physical;;20;0;1;normal;Fighting
+Lucky Chant;100;0;Status;Past;30;0;1;allySide;Normal
+Lumina Crash;100;80;Special;;10;0;1;normal;Psychic
+Lunar Blessing;100;0;Status;;5;0;1;allies;Psychic
+Lunar Dance;100;0;Status;;10;0;1;self;Psychic
+Lunge;100;80;Physical;;15;0;1;normal;Bug
+Luster Purge;100;95;Special;;5;0;1;normal;Psychic
+Mach Punch;100;40;Physical;;30;1;1;normal;Fighting
+Magical Leaf;100;60;Special;;20;0;1;normal;Grass
+Magical Torque;100;100;Physical;Unobtainable;10;0;1;normal;Fairy
+Magic Coat;100;0;Status;Past;15;4;1;self;Psychic
+Magic Powder;100;0;Status;;20;0;1;normal;Psychic
+Magic Room;100;0;Status;;10;0;1;all;Psychic
+Magma Storm;75;100;Special;;5;0;1;normal;Fire
+Magnet Bomb;100;60;Physical;Past;20;0;1;normal;Steel
+Magnetic Flux;100;0;Status;;20;0;1;allySide;Electric
+Magnet Rise;100;0;Status;;10;0;1;self;Electric
+Magnitude;100;0;Physical;Past;30;0;1;allAdjacent;Ground
+Make It Rain;100;120;Special;;5;0;1;allAdjacentFoes;Steel
+Malicious Moonsault;100;180;Physical;Past;1;0;1;normal;Dark
+Malignant Chain;100;100;Special;;5;0;1;normal;Poison
+Mat Block;100;0;Status;Past;10;0;1;allySide;Fighting
+Matcha Gotcha;90;80;Special;;15;0;1;allAdjacentFoes;Grass
+Max Airstream;100;10;Physical;Past;10;0;1;adjacentFoe;Flying
+Max Darkness;100;10;Physical;Past;10;0;1;adjacentFoe;Dark
+Max Flare;100;100;Physical;Past;10;0;1;adjacentFoe;Fire
+Max Flutterby;100;10;Physical;Past;10;0;1;adjacentFoe;Bug
+Max Geyser;100;10;Physical;Past;10;0;1;adjacentFoe;Water
+Max Guard;100;0;Status;Past;10;4;1;self;Normal
+Max Hailstorm;100;10;Physical;Past;10;0;1;adjacentFoe;Ice
+Max Knuckle;100;10;Physical;Past;10;0;1;adjacentFoe;Fighting
+Max Lightning;100;10;Physical;Past;10;0;1;adjacentFoe;Electric
+Max Mindstorm;100;10;Physical;Past;10;0;1;adjacentFoe;Psychic
+Max Ooze;100;10;Physical;Past;10;0;1;adjacentFoe;Poison
+Max Overgrowth;100;10;Physical;Past;10;0;1;adjacentFoe;Grass
+Max Phantasm;100;10;Physical;Past;10;0;1;adjacentFoe;Ghost
+Max Quake;100;10;Physical;Past;10;0;1;adjacentFoe;Ground
+Max Rockfall;100;10;Physical;Past;10;0;1;adjacentFoe;Rock
+Max Starfall;100;10;Physical;Past;10;0;1;adjacentFoe;Fairy
+Max Steelspike;100;10;Physical;Past;10;0;1;adjacentFoe;Steel
+Max Strike;100;10;Physical;Past;10;0;1;adjacentFoe;Normal
+Max Wyrmwind;100;10;Physical;Past;10;0;1;adjacentFoe;Dragon
+Mean Look;100;0;Status;;5;0;1;normal;Normal
+Meditate;100;0;Status;Past;40;0;1;self;Psychic
+Me First;100;0;Status;Past;20;0;1;adjacentFoe;Normal
+Mega Drain;100;40;Special;;15;0;1;normal;Grass
+Megahorn;85;120;Physical;;10;0;1;normal;Bug
+Mega Kick;75;120;Physical;;5;0;1;normal;Normal
+Mega Punch;85;80;Physical;;20;0;1;normal;Normal
+Memento;100;0;Status;;10;0;1;normal;Dark
+Menacing Moonraze Maelstrom;100;200;Special;Past;1;0;1;normal;Ghost
+Metal Burst;100;0;Physical;;10;0;1;scripted;Steel
+Metal Claw;95;50;Physical;;35;0;1;normal;Steel
+Metal Sound;85;0;Status;;40;0;1;normal;Steel
+Meteor Assault;100;150;Physical;Past;5;0;1;normal;Fighting
+Meteor Beam;90;120;Special;;10;0;1;normal;Rock
+Meteor Mash;90;90;Physical;;10;0;1;normal;Steel
+Metronome;100;0;Status;;10;0;1;self;Normal
+Mighty Cleave;100;95;Physical;;5;0;1;normal;Rock
+Milk Drink;100;0;Status;;5;0;1;self;Normal
+Mimic;100;0;Status;;10;0;1;normal;Normal
+Mind Blown;100;150;Special;Past;5;0;1;allAdjacent;Fire
+Mind Reader;100;0;Status;Past;5;0;1;normal;Normal
+Minimize;100;0;Status;;10;0;1;self;Normal
+Miracle Eye;100;0;Status;Past;40;0;1;normal;Psychic
+Mirror Coat;100;0;Special;;20;-5;1;scripted;Psychic
+Mirror Move;100;0;Status;Past;20;0;1;normal;Flying
+Mirror Shot;85;65;Special;Past;10;0;1;normal;Steel
+Mist;100;0;Status;;30;0;1;allySide;Ice
+Mist Ball;100;95;Special;;5;0;1;normal;Psychic
+Misty Explosion;100;100;Special;;5;0;1;allAdjacent;Fairy
+Misty Terrain;100;0;Status;;10;0;1;all;Fairy
+Moonblast;100;95;Special;;15;0;1;normal;Fairy
+Moongeist Beam;100;100;Special;;5;0;1;normal;Ghost
+Moonlight;100;0;Status;;5;0;1;self;Fairy
+Morning Sun;100;0;Status;;5;0;1;self;Normal
+Mortal Spin;100;30;Physical;;15;0;1;allAdjacentFoes;Poison
+Mountain Gale;85;100;Physical;;10;0;1;normal;Ice
+Mud Bomb;85;65;Special;Past;10;0;1;normal;Ground
+Mud Shot;95;55;Special;;15;0;1;normal;Ground
+Mud-Slap;100;20;Special;;10;0;1;normal;Ground
+Mud Sport;100;0;Status;Past;15;0;1;all;Ground
+Muddy Water;85;90;Special;;10;0;1;allAdjacentFoes;Water
+Multi-Attack;100;120;Physical;Past;10;0;1;normal;Normal
+Mystical Fire;100;75;Special;;10;0;1;normal;Fire
+Mystical Power;90;70;Special;;10;0;1;normal;Psychic
+Nasty Plot;100;0;Status;;20;0;1;self;Dark
+Natural Gift;100;0;Physical;Past;15;0;1;normal;Normal
+Nature Power;100;0;Status;Past;20;0;1;normal;Normal
+Nature's Madness;90;0;Special;Past;10;0;1;normal;Fairy
+Needle Arm;100;60;Physical;Past;15;0;1;normal;Grass
+Never-Ending Nightmare;100;1;Physical;Past;1;0;1;normal;Ghost
+Night Daze;95;85;Special;;10;0;1;normal;Dark
+Nightmare;100;0;Status;Past;15;0;1;normal;Ghost
+Night Shade;100;0;Special;;15;0;1;normal;Ghost
+Night Slash;100;70;Physical;;15;0;2;normal;Dark
+Noble Roar;100;0;Status;;30;0;1;normal;Normal
+No Retreat;100;0;Status;;5;0;1;self;Fighting
+Noxious Torque;100;100;Physical;Unobtainable;10;0;1;normal;Poison
+Nuzzle;100;20;Physical;;20;0;1;normal;Electric
+Oblivion Wing;100;80;Special;Past;10;0;1;any;Flying
+Obstruct;100;0;Status;Past;10;4;1;self;Dark
+Oceanic Operetta;100;195;Special;Past;1;0;1;normal;Water
+Octazooka;85;65;Special;Past;10;0;1;normal;Water
+Octolock;100;0;Status;Past;15;0;1;normal;Fighting
+Odor Sleuth;100;0;Status;Past;40;0;1;normal;Normal
+Ominous Wind;100;60;Special;Past;5;0;1;normal;Ghost
+Order Up;100;80;Physical;;10;0;1;normal;Dragon
+Origin Pulse;85;110;Special;;10;0;1;allAdjacentFoes;Water
+Outrage;100;120;Physical;;10;0;1;randomNormal;Dragon
+Overdrive;100;80;Special;;10;0;1;allAdjacentFoes;Electric
+Overheat;90;130;Special;;5;0;1;normal;Fire
+Pain Split;100;0;Status;;20;0;1;normal;Normal
+Paleo Wave;100;85;Special;CAP;15;0;1;normal;Rock
+Parabolic Charge;100;65;Special;;20;0;1;allAdjacent;Electric
+Parting Shot;100;0;Status;;20;0;1;normal;Dark
+Payback;100;50;Physical;;10;0;1;normal;Dark
+Pay Day;100;40;Physical;;20;0;1;normal;Normal
+Peck;100;35;Physical;;35;0;1;any;Flying
+Perish Song;100;0;Status;;5;0;1;all;Normal
+Petal Blizzard;100;90;Physical;;15;0;1;allAdjacent;Grass
+Petal Dance;100;120;Special;;10;0;1;randomNormal;Grass
+Phantom Force;100;90;Physical;;10;0;1;normal;Ghost
+Photon Geyser;100;100;Special;;5;0;1;normal;Psychic
+Pika Papow;100;0;Special;LGPE;20;0;1;normal;Electric
+Pin Missile;95;25;Physical;;20;0;1;normal;Bug
+Plasma Fists;100;100;Physical;Past;15;0;1;normal;Electric
+Play Nice;100;0;Status;;20;0;1;normal;Normal
+Play Rough;90;90;Physical;;10;0;1;normal;Fairy
+Pluck;100;60;Physical;;20;0;1;any;Flying
+Poison Fang;100;50;Physical;;15;0;1;normal;Poison
+Poison Gas;90;0;Status;;40;0;1;allAdjacentFoes;Poison
+Poison Jab;100;80;Physical;;20;0;1;normal;Poison
+Poison Powder;75;0;Status;;35;0;1;normal;Poison
+Poison Sting;100;15;Physical;;35;0;1;normal;Poison
+Poison Tail;100;50;Physical;;25;0;2;normal;Poison
+Pollen Puff;100;90;Special;;15;0;1;normal;Bug
+Poltergeist;90;110;Physical;;5;0;1;normal;Ghost
+Population Bomb;90;20;Physical;;10;0;1;normal;Normal
+Pounce;100;50;Physical;;20;0;1;normal;Bug
+Pound;100;40;Physical;;35;0;1;normal;Normal
+Powder;100;0;Status;Past;20;1;1;normal;Bug
+Powder Snow;100;40;Special;;25;0;1;allAdjacentFoes;Ice
+Power Gem;100;80;Special;;20;0;1;normal;Rock
+Power Shift;100;0;Status;Unobtainable;10;0;1;self;Normal
+Power Split;100;0;Status;;10;0;1;normal;Psychic
+Power Swap;100;0;Status;;10;0;1;normal;Psychic
+Power Trick;100;0;Status;;10;0;1;self;Psychic
+Power Trip;100;20;Physical;;10;0;1;normal;Dark
+Power-Up Punch;100;40;Physical;Past;20;0;1;normal;Fighting
+Power Whip;85;120;Physical;;10;0;1;normal;Grass
+Precipice Blades;85;120;Physical;;10;0;1;allAdjacentFoes;Ground
+Present;90;0;Physical;;15;0;1;normal;Normal
+Prismatic Laser;100;160;Special;;10;0;1;normal;Psychic
+Protect;100;0;Status;;10;4;1;self;Normal
+Psybeam;100;65;Special;;20;0;1;normal;Psychic
+Psyblade;100;80;Physical;;15;0;1;normal;Psychic
+Psych Up;100;0;Status;;10;0;1;normal;Normal
+Psychic;100;90;Special;;10;0;1;normal;Psychic
+Psychic Fangs;100;85;Physical;;10;0;1;normal;Psychic
+Psychic Noise;100;75;Special;;10;0;1;normal;Psychic
+Psychic Terrain;100;0;Status;;10;0;1;all;Psychic
+Psycho Boost;90;140;Special;;5;0;1;normal;Psychic
+Psycho Cut;100;70;Physical;;20;0;2;normal;Psychic
+Psycho Shift;100;0;Status;Past;10;0;1;normal;Psychic
+Psyshield Bash;90;70;Physical;;10;0;1;normal;Psychic
+Psyshock;100;80;Special;;10;0;1;normal;Psychic
+Psystrike;100;100;Special;;10;0;1;normal;Psychic
+Psywave;100;0;Special;Past;15;0;1;normal;Psychic
+Pulverizing Pancake;100;210;Physical;Past;1;0;1;normal;Normal
+Punishment;100;0;Physical;Past;5;0;1;normal;Dark
+Purify;100;0;Status;Past;20;0;1;normal;Poison
+Pursuit;100;40;Physical;Past;20;0;1;normal;Dark
+Pyro Ball;90;120;Physical;;5;0;1;normal;Fire
+Quash;100;0;Status;;15;0;1;normal;Dark
+Quick Attack;100;40;Physical;;30;1;1;normal;Normal
+Quick Guard;100;0;Status;;15;3;1;allySide;Fighting
+Quiver Dance;100;0;Status;;20;0;1;self;Bug
+Rage;100;20;Physical;Past;20;0;1;normal;Normal
+Rage Fist;100;50;Physical;;10;0;1;normal;Ghost
+Rage Powder;100;0;Status;;20;2;1;self;Bug
+Raging Bull;100;90;Physical;;10;0;1;normal;Normal
+Raging Fury;100;120;Physical;;10;0;1;randomNormal;Fire
+Rain Dance;100;0;Status;;5;0;1;all;Water
+Rapid Spin;100;50;Physical;;40;0;1;normal;Normal
+Razor Leaf;95;55;Physical;;25;0;2;allAdjacentFoes;Grass
+Razor Shell;95;75;Physical;;10;0;1;normal;Water
+Razor Wind;100;80;Special;Past;10;0;2;allAdjacentFoes;Normal
+Recover;100;0;Status;;5;0;1;self;Normal
+Recycle;100;0;Status;;10;0;1;self;Normal
+Reflect;100;0;Status;;20;0;1;allySide;Psychic
+Reflect Type;100;0;Status;;15;0;1;normal;Normal
+Refresh;100;0;Status;Past;20;0;1;self;Normal
+Relic Song;100;75;Special;;10;0;1;allAdjacentFoes;Normal
+Rest;100;0;Status;;5;0;1;self;Psychic
+Retaliate;100;70;Physical;;5;0;1;normal;Normal
+Return;100;0;Physical;Past;20;0;1;normal;Normal
+Revelation Dance;100;90;Special;;15;0;1;normal;Normal
+Revenge;100;60;Physical;Past;10;-4;1;normal;Fighting
+Reversal;100;0;Physical;;15;0;1;normal;Fighting
+Revival Blessing;100;0;Status;;1;0;1;self;Normal
+Rising Voltage;100;70;Special;;20;0;1;normal;Electric
+Roar;100;0;Status;;20;-6;1;normal;Normal
+Roar of Time;90;150;Special;;5;0;1;normal;Dragon
+Rock Blast;90;25;Physical;;10;0;1;normal;Rock
+Rock Climb;85;90;Physical;Past;20;0;1;normal;Normal
+Rock Polish;100;0;Status;;20;0;1;self;Rock
+Rock Slide;90;75;Physical;;10;0;1;allAdjacentFoes;Rock
+Rock Smash;100;40;Physical;;15;0;1;normal;Fighting
+Rock Throw;90;50;Physical;;15;0;1;normal;Rock
+Rock Tomb;95;60;Physical;;15;0;1;normal;Rock
+Rock Wrecker;90;150;Physical;;5;0;1;normal;Rock
+Role Play;100;0;Status;;10;0;1;normal;Psychic
+Rolling Kick;85;60;Physical;Past;15;0;1;normal;Fighting
+Rollout;90;30;Physical;;20;0;1;normal;Rock
+Roost;100;0;Status;;5;0;1;self;Flying
+Rototiller;100;0;Status;Past;10;0;1;all;Ground
+Round;100;60;Special;;15;0;1;normal;Normal
+Ruination;90;0;Special;;10;0;1;normal;Dark
+Sacred Fire;95;100;Physical;;5;0;1;normal;Fire
+Sacred Sword;100;90;Physical;;15;0;1;normal;Fighting
+Safeguard;100;0;Status;;25;0;1;allySide;Normal
+Salt Cure;100;40;Physical;;15;0;1;normal;Rock
+Sand Attack;100;0;Status;;15;0;1;normal;Ground
+Sandsear Storm;80;100;Special;;10;0;1;allAdjacentFoes;Ground
+Sandstorm;100;0;Status;;10;0;1;all;Rock
+Sand Tomb;85;35;Physical;;15;0;1;normal;Ground
+Sappy Seed;90;100;Physical;LGPE;10;0;1;normal;Grass
+Savage Spin-Out;100;1;Physical;Past;1;0;1;normal;Bug
+Scald;100;80;Special;;15;0;1;normal;Water
+Scale Shot;90;25;Physical;;20;0;1;normal;Dragon
+Scary Face;100;0;Status;;10;0;1;normal;Normal
+Scorching Sands;100;70;Special;;10;0;1;normal;Ground
+Scratch;100;40;Physical;;35;0;1;normal;Normal
+Screech;85;0;Status;;40;0;1;normal;Normal
+Searing Shot;100;100;Special;Past;5;0;1;allAdjacent;Fire
+Searing Sunraze Smash;100;200;Physical;Past;1;0;1;normal;Steel
+Secret Power;100;70;Physical;Past;20;0;1;normal;Normal
+Secret Sword;100;85;Special;;10;0;1;normal;Fighting
+Seed Bomb;100;80;Physical;;15;0;1;normal;Grass
+Seed Flare;85;120;Special;;5;0;1;normal;Grass
+Seismic Toss;100;0;Physical;;20;0;1;normal;Fighting
+Self-Destruct;100;200;Physical;;5;0;1;allAdjacent;Normal
+Shadow Ball;100;80;Special;;15;0;1;normal;Ghost
+Shadow Bone;100;85;Physical;Past;10;0;1;normal;Ghost
+Shadow Claw;100;70;Physical;;15;0;2;normal;Ghost
+Shadow Force;100;120;Physical;;5;0;1;normal;Ghost
+Shadow Punch;100;60;Physical;;20;0;1;normal;Ghost
+Shadow Sneak;100;40;Physical;;30;1;1;normal;Ghost
+Shadow Strike;95;80;Physical;CAP;10;0;1;normal;Ghost
+Sharpen;100;0;Status;Past;30;0;1;self;Normal
+Shattered Psyche;100;1;Physical;Past;1;0;1;normal;Psychic
+Shed Tail;100;0;Status;;10;0;1;self;Normal
+Sheer Cold;30;0;Special;;5;0;1;normal;Ice
+Shell Side Arm;100;90;Special;;10;0;1;normal;Poison
+Shell Smash;100;0;Status;;15;0;1;self;Normal
+Shell Trap;100;150;Special;Past;5;-3;1;allAdjacentFoes;Fire
+Shelter;100;0;Status;;10;0;1;self;Steel
+Shift Gear;100;0;Status;;10;0;1;self;Steel
+Shock Wave;100;60;Special;;20;0;1;normal;Electric
+Shore Up;100;0;Status;;5;0;1;self;Ground
+Signal Beam;100;75;Special;Past;15;0;1;normal;Bug
+Silk Trap;100;0;Status;;10;4;1;self;Bug
+Silver Wind;100;60;Special;Past;5;0;1;normal;Bug
+Simple Beam;100;0;Status;;15;0;1;normal;Normal
+Sing;55;0;Status;;15;0;1;normal;Normal
+Sinister Arrow Raid;100;180;Physical;Past;1;0;1;normal;Ghost
+Sizzly Slide;100;60;Physical;LGPE;20;0;1;normal;Fire
+Sketch;100;0;Status;;1;0;1;normal;Normal
+Skill Swap;100;0;Status;;10;0;1;normal;Psychic
+Skitter Smack;90;70;Physical;;10;0;1;normal;Bug
+Skull Bash;100;130;Physical;Past;10;0;1;normal;Normal
+Sky Attack;90;140;Physical;;5;0;2;any;Flying
+Sky Drop;100;60;Physical;Past;10;0;1;any;Flying
+Sky Uppercut;90;85;Physical;Past;15;0;1;normal;Fighting
+Slack Off;100;0;Status;;5;0;1;self;Normal
+Slam;75;80;Physical;;20;0;1;normal;Normal
+Slash;100;70;Physical;;20;0;2;normal;Normal
+Sleep Powder;75;0;Status;;15;0;1;normal;Grass
+Sleep Talk;100;0;Status;;10;0;1;self;Normal
+Sludge;100;65;Special;;20;0;1;normal;Poison
+Sludge Bomb;100;90;Special;;10;0;1;normal;Poison
+Sludge Wave;100;95;Special;;10;0;1;allAdjacent;Poison
+Smack Down;100;50;Physical;;15;0;1;normal;Rock
+Smart Strike;100;70;Physical;;10;0;1;normal;Steel
+Smelling Salts;100;70;Physical;Past;10;0;1;normal;Normal
+Smog;70;30;Special;;20;0;1;normal;Poison
+Smokescreen;100;0;Status;;20;0;1;normal;Normal
+Snap Trap;100;35;Physical;Past;15;0;1;normal;Grass
+Snarl;95;55;Special;;15;0;1;allAdjacentFoes;Dark
+Snatch;100;0;Status;Past;10;4;1;self;Dark
+Snipe Shot;100;80;Special;;15;0;2;normal;Water
+Snore;100;50;Special;;15;0;1;normal;Normal
+Snowscape;100;0;Status;;10;0;1;all;Ice
+Soak;100;0;Status;;20;0;1;normal;Water
+Soft-Boiled;100;0;Status;;5;0;1;self;Normal
+Solar Beam;100;120;Special;;10;0;1;normal;Grass
+Solar Blade;100;125;Physical;;10;0;1;normal;Grass
+Sonic Boom;90;0;Special;Past;20;0;1;normal;Normal
+Soul-Stealing 7-Star Strike;100;195;Physical;Past;1;0;1;normal;Ghost
+Spacial Rend;95;100;Special;;5;0;2;normal;Dragon
+Spark;100;65;Physical;;20;0;1;normal;Electric
+Sparkling Aria;100;90;Special;;10;0;1;allAdjacent;Water
+Sparkly Swirl;85;120;Special;LGPE;5;0;1;normal;Fairy
+Spectral Thief;100;90;Physical;Past;10;0;1;normal;Ghost
+Speed Swap;100;0;Status;;10;0;1;normal;Psychic
+Spicy Extract;100;0;Status;;15;0;1;normal;Grass
+Spider Web;100;0;Status;Past;10;0;1;normal;Bug
+Spike Cannon;100;20;Physical;Past;15;0;1;normal;Normal
+Spikes;100;0;Status;;20;0;1;foeSide;Ground
+Spiky Shield;100;0;Status;;10;4;1;self;Grass
+Spin Out;100;100;Physical;;5;0;1;normal;Steel
+Spirit Break;100;75;Physical;;15;0;1;normal;Fairy
+Spirit Shackle;100;80;Physical;;10;0;1;normal;Ghost
+Spit Up;100;0;Special;;10;0;1;normal;Normal
+Spite;100;0;Status;;10;0;1;normal;Ghost
+Splash;100;0;Status;;40;0;1;self;Normal
+Splintered Stormshards;100;190;Physical;Past;1;0;1;normal;Rock
+Splishy Splash;100;90;Special;LGPE;15;0;1;allAdjacentFoes;Water
+Spore;100;0;Status;;15;0;1;normal;Grass
+Spotlight;100;0;Status;Past;15;3;1;normal;Normal
+Springtide Storm;80;100;Special;;5;0;1;allAdjacentFoes;Fairy
+Stealth Rock;100;0;Status;;20;0;1;foeSide;Rock
+Steam Eruption;95;110;Special;;5;0;1;normal;Water
+Steamroller;100;65;Physical;Past;20;0;1;normal;Bug
+Steel Beam;95;140;Special;;5;0;1;normal;Steel
+Steel Roller;100;130;Physical;;5;0;1;normal;Steel
+Steel Wing;90;70;Physical;;25;0;1;normal;Steel
+Sticky Web;100;0;Status;;20;0;1;foeSide;Bug
+Stockpile;100;0;Status;;20;0;1;self;Normal
+Stoked Sparksurfer;100;175;Special;Past;1;0;1;normal;Electric
+Stomp;100;65;Physical;;20;0;1;normal;Normal
+Stomping Tantrum;100;75;Physical;;10;0;1;normal;Ground
+Stone Axe;90;65;Physical;;15;0;1;normal;Rock
+Stone Edge;80;100;Physical;;5;0;2;normal;Rock
+Stored Power;100;20;Special;;10;0;1;normal;Psychic
+Storm Throw;100;60;Physical;Past;10;0;1;normal;Fighting
+Strange Steam;95;90;Special;;10;0;1;normal;Fairy
+Strength;100;80;Physical;;15;0;1;normal;Normal
+Strength Sap;100;0;Status;;10;0;1;normal;Grass
+String Shot;95;0;Status;;40;0;1;allAdjacentFoes;Bug
+Struggle;100;50;Physical;;1;0;1;randomNormal;Normal
+Struggle Bug;100;50;Special;;20;0;1;allAdjacentFoes;Bug
+Stuff Cheeks;100;0;Status;;10;0;1;self;Normal
+Stun Spore;75;0;Status;;30;0;1;normal;Grass
+Submission;80;80;Physical;Past;20;0;1;normal;Fighting
+Substitute;100;0;Status;;10;0;1;self;Normal
+Subzero Slammer;100;1;Physical;Past;1;0;1;normal;Ice
+Sucker Punch;100;70;Physical;;5;1;1;normal;Dark
+Sunny Day;100;0;Status;;5;0;1;all;Fire
+Sunsteel Strike;100;100;Physical;;5;0;1;normal;Steel
+Supercell Slam;95;100;Physical;;15;0;1;normal;Electric
+Super Fang;90;0;Physical;;10;0;1;normal;Normal
+Superpower;100;120;Physical;;5;0;1;normal;Fighting
+Supersonic;55;0;Status;;20;0;1;normal;Normal
+Supersonic Skystrike;100;1;Physical;Past;1;0;1;normal;Flying
+Surf;100;90;Special;;15;0;1;allAdjacent;Water
+Surging Strikes;100;25;Physical;;5;0;1;normal;Water
+Swagger;85;0;Status;;15;0;1;normal;Normal
+Swallow;100;0;Status;;10;0;1;self;Normal
+Sweet Kiss;75;0;Status;;10;0;1;normal;Fairy
+Sweet Scent;100;0;Status;;20;0;1;allAdjacentFoes;Normal
+Swift;100;60;Special;;20;0;1;allAdjacentFoes;Normal
+Switcheroo;100;0;Status;;10;0;1;normal;Dark
+Swords Dance;100;0;Status;;20;0;1;self;Normal
+Synchronoise;100;120;Special;Past;10;0;1;allAdjacent;Psychic
+Synthesis;100;0;Status;;5;0;1;self;Grass
+Syrup Bomb;85;60;Special;;10;0;1;normal;Grass
+Tachyon Cutter;100;50;Special;;10;0;1;normal;Steel
+Tackle;100;40;Physical;;35;0;1;normal;Normal
+Tail Glow;100;0;Status;;20;0;1;self;Bug
+Tail Slap;85;25;Physical;;10;0;1;normal;Normal
+Tail Whip;100;0;Status;;30;0;1;allAdjacentFoes;Normal
+Tailwind;100;0;Status;;15;0;1;allySide;Flying
+Take Down;85;90;Physical;;20;0;1;normal;Normal
+Take Heart;100;0;Status;;15;0;1;self;Psychic
+Tar Shot;100;0;Status;;15;0;1;normal;Rock
+Taunt;100;0;Status;;20;0;1;normal;Dark
+Tearful Look;100;0;Status;;20;0;1;normal;Normal
+Teatime;100;0;Status;;10;0;1;all;Normal
+Techno Blast;100;120;Special;Past;5;0;1;normal;Normal
+Tectonic Rage;100;1;Physical;Past;1;0;1;normal;Ground
+Teeter Dance;100;0;Status;;20;0;1;allAdjacent;Normal
+Telekinesis;100;0;Status;Past;15;0;1;normal;Psychic
+Teleport;100;0;Status;;20;-6;1;self;Psychic
+Temper Flare;100;75;Physical;;10;0;1;normal;Fire
+Tera Blast;100;80;Special;;10;0;1;normal;Normal
+Tera Starstorm;100;120;Special;;5;0;1;normal;Normal
+Terrain Pulse;100;50;Special;;10;0;1;normal;Normal
+Thief;100;60;Physical;;25;0;1;normal;Dark
+Thousand Arrows;100;90;Physical;Past;10;0;1;allAdjacentFoes;Ground
+Thousand Waves;100;90;Physical;Past;10;0;1;allAdjacentFoes;Ground
+Thrash;100;120;Physical;;10;0;1;randomNormal;Normal
+Throat Chop;100;80;Physical;;15;0;1;normal;Dark
+Thunder;70;110;Special;;10;0;1;normal;Electric
+Thunderbolt;100;90;Special;;15;0;1;normal;Electric
+Thunder Cage;90;80;Special;;15;0;1;normal;Electric
+Thunderclap;100;70;Special;;5;1;1;normal;Electric
+Thunder Fang;95;65;Physical;;15;0;1;normal;Electric
+Thunderous Kick;100;90;Physical;;10;0;1;normal;Fighting
+Thunder Punch;100;75;Physical;;15;0;1;normal;Electric
+Thunder Shock;100;40;Special;;30;0;1;normal;Electric
+Thunder Wave;90;0;Status;;20;0;1;normal;Electric
+Tickle;100;0;Status;;20;0;1;normal;Normal
+Tidy Up;100;0;Status;;10;0;1;self;Normal
+Topsy-Turvy;100;0;Status;;20;0;1;normal;Dark
+Torch Song;100;80;Special;;10;0;1;normal;Fire
+Torment;100;0;Status;;15;0;1;normal;Dark
+Toxic;90;0;Status;;10;0;1;normal;Poison
+Toxic Spikes;100;0;Status;;20;0;1;foeSide;Poison
+Toxic Thread;100;0;Status;;20;0;1;normal;Poison
+Trailblaze;100;50;Physical;;20;0;1;normal;Grass
+Transform;100;0;Status;;10;0;1;normal;Normal
+Tri Attack;100;80;Special;;10;0;1;normal;Normal
+Trick;100;0;Status;;10;0;1;normal;Psychic
+Trick-or-Treat;100;0;Status;Past;20;0;1;normal;Ghost
+Trick Room;100;0;Status;;5;-7;1;all;Psychic
+Triple Arrows;100;90;Physical;;10;0;2;normal;Fighting
+Triple Axel;90;20;Physical;;10;0;1;normal;Ice
+Triple Dive;95;30;Physical;;10;0;1;normal;Water
+Triple Kick;90;10;Physical;;10;0;1;normal;Fighting
+Trop Kick;100;70;Physical;;15;0;1;normal;Grass
+Trump Card;100;0;Special;Past;5;0;1;normal;Normal
+Twin Beam;100;40;Special;;10;0;1;normal;Psychic
+Twineedle;100;25;Physical;Past;20;0;1;normal;Bug
+Twinkle Tackle;100;1;Physical;Past;1;0;1;normal;Fairy
+Twister;100;40;Special;;20;0;1;allAdjacentFoes;Dragon
+U-turn;100;70;Physical;;20;0;1;normal;Bug
+Upper Hand;100;65;Physical;;15;3;1;normal;Fighting
+Uproar;100;90;Special;;10;0;1;randomNormal;Normal
+Vacuum Wave;100;40;Special;;30;1;1;normal;Fighting
+V-create;95;180;Physical;Unobtainable;5;0;1;normal;Fire
+Veevee Volley;100;0;Physical;LGPE;20;0;1;normal;Normal
+Venom Drench;100;0;Status;Past;20;0;1;allAdjacentFoes;Poison
+Venoshock;100;65;Special;;10;0;1;normal;Poison
+Victory Dance;100;0;Status;;10;0;1;self;Fighting
+Vine Whip;100;45;Physical;;25;0;1;normal;Grass
+Vise Grip;100;55;Physical;;30;0;1;normal;Normal
+Vital Throw;100;70;Physical;Past;10;-1;1;normal;Fighting
+Volt Switch;100;70;Special;;20;0;1;normal;Electric
+Volt Tackle;100;120;Physical;;15;0;1;normal;Electric
+Wake-Up Slap;100;70;Physical;Past;10;0;1;normal;Fighting
+Waterfall;100;80;Physical;;15;0;1;normal;Water
+Water Gun;100;40;Special;;25;0;1;normal;Water
+Water Pledge;100;80;Special;;10;0;1;normal;Water
+Water Pulse;100;60;Special;;20;0;1;any;Water
+Water Shuriken;100;15;Special;;20;1;1;normal;Water
+Water Sport;100;0;Status;Past;15;0;1;all;Water
+Water Spout;100;150;Special;;5;0;1;allAdjacentFoes;Water
+Wave Crash;100;120;Physical;;10;0;1;normal;Water
+Weather Ball;100;50;Special;;10;0;1;normal;Normal
+Whirlpool;85;35;Special;;15;0;1;normal;Water
+Whirlwind;100;0;Status;;20;-6;1;normal;Normal
+Wicked Blow;100;75;Physical;;5;0;1;normal;Dark
+Wicked Torque;100;80;Physical;Unobtainable;10;0;1;normal;Dark
+Wide Guard;100;0;Status;;10;3;1;allySide;Rock
+Wildbolt Storm;80;100;Special;;10;0;1;allAdjacentFoes;Electric
+Wild Charge;100;90;Physical;;15;0;1;normal;Electric
+Will-O-Wisp;85;0;Status;;15;0;1;normal;Fire
+Wing Attack;100;60;Physical;;35;0;1;any;Flying
+Wish;100;0;Status;;10;0;1;self;Normal
+Withdraw;100;0;Status;;40;0;1;self;Water
+Wonder Room;100;0;Status;;10;0;1;all;Psychic
+Wood Hammer;100;120;Physical;;15;0;1;normal;Grass
+Work Up;100;0;Status;;30;0;1;self;Normal
+Worry Seed;100;0;Status;;10;0;1;normal;Grass
+Wrap;90;15;Physical;;20;0;1;normal;Normal
+Wring Out;100;0;Special;Past;5;0;1;normal;Normal
+X-Scissor;100;80;Physical;;15;0;1;normal;Bug
+Yawn;100;0;Status;;10;0;1;normal;Normal
+Zap Cannon;50;120;Special;;5;0;1;normal;Electric
+Zen Headbutt;90;80;Physical;;15;0;1;normal;Psychic
+Zing Zap;100;80;Physical;;10;0;1;normal;Electric
+Zippy Zap;100;80;Physical;LGPE;10;2;1;normal;Electric
