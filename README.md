@@ -1,5 +1,5 @@
 # Pokémon Team Picker 🥇
-## Overview
+## Overview 🎮
 Welcome to the Pokémon Gym Leader Challenge project! This program allows users to select a Pokémon game and gym leader, view the gym leader’s team, and prepare for battle. Currently, users can choose their generation, game, and gym, and see information about the corresponding gym leaders and their Pokémon.
 
 ## Current features 🌟
