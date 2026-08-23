@@ -1,0 +1,98 @@
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import fs from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
+import { getMoveData } from "./moveData";
+
+function mockPokeApiMoveResponse(data: {
+  type: string;
+  category: "physical" | "special" | "status";
+  power: number | null;
+  priority: number;
+}) {
+  return {
+    ok: true,
+    json: async () => ({
+      type: { name: data.type },
+      damage_class: { name: data.category },
+      power: data.power,
+      priority: data.priority,
+    }),
+  };
+}
+
+describe("getMoveData", () => {
+  let cacheDir: string;
+
+  beforeEach(async () => {
+    cacheDir = await fs.mkdtemp(path.join(os.tmpdir(), "movedata-cache-"));
+  });
+
+  afterEach(async () => {
+    await fs.rm(cacheDir, { recursive: true, force: true });
+  });
+
+  it("fetches and maps a physical move's data", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(
+      mockPokeApiMoveResponse({ type: "normal", category: "physical", power: 40, priority: 0 })
+    );
+
+    const result = await getMoveData("Tackle", { cacheDir, fetchImpl });
+
+    expect(result).toEqual({
+      name: "Tackle",
+      type: "normal",
+      category: "physical",
+      power: 40,
+      priority: 0,
+    });
+  });
+
+  it("maps a status move's null power", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(
+      mockPokeApiMoveResponse({ type: "normal", category: "status", power: null, priority: 0 })
+    );
+
+    const result = await getMoveData("Growl", { cacheDir, fetchImpl });
+
+    expect(result).toEqual({
+      name: "Growl",
+      type: "normal",
+      category: "status",
+      power: null,
+      priority: 0,
+    });
+  });
+
+  it("maps a priority move's priority value", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(
+      mockPokeApiMoveResponse({ type: "normal", category: "physical", power: 40, priority: 1 })
+    );
+
+    const result = await getMoveData("Quick Attack", { cacheDir, fetchImpl });
+
+    expect(result!.priority).toBe(1);
+  });
+
+  it("caches the result and does not refetch on a second call", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(
+      mockPokeApiMoveResponse({ type: "normal", category: "physical", power: 40, priority: 0 })
+    );
+
+    await getMoveData("Tackle", { cacheDir, fetchImpl });
+    await getMoveData("Tackle", { cacheDir, fetchImpl });
+
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  it("negative-caches a failed lookup so it does not refetch", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({ ok: false, status: 404 });
+
+    const first = await getMoveData("NotAMove", { cacheDir, fetchImpl });
+    const second = await getMoveData("NotAMove", { cacheDir, fetchImpl });
+
+    expect(first).toBeNull();
+    expect(second).toBeNull();
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+});
