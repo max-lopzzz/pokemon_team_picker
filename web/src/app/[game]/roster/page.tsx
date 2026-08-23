@@ -1,5 +1,6 @@
 import { listRoster } from "@/core/rosterQueries";
 import { deleteRosterPokemonAction } from "./actions";
+import AddPokemonForm from "./AddPokemonForm";
 
 export default async function RosterPage({
   params,
@@ -29,6 +30,7 @@ export default async function RosterPage({
           </li>
         ))}
       </ul>
+      <AddPokemonForm game={gameName} />
     </main>
   );
 }
