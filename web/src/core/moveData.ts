@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { toApiSlug } from "./pokeapi";
 import type { MoveData } from "./types";
 
 const DEFAULT_CACHE_DIR = path.join(process.cwd(), ".cache", "pokeapi-movedata");
@@ -20,17 +21,13 @@ function isCacheMiss(entry: CacheEntry): entry is CacheMiss {
   return (entry as CacheMiss).__miss === true;
 }
 
-function toMoveSlug(moveName: string): string {
-  return moveName.toLowerCase().replace(/\s+/g, "-");
-}
-
 export async function getMoveData(
   moveName: string,
   options: Options = {}
 ): Promise<MoveData | null> {
   const cacheDir = options.cacheDir ?? DEFAULT_CACHE_DIR;
   const fetchImpl = options.fetchImpl ?? fetch;
-  const cacheKey = toMoveSlug(moveName);
+  const cacheKey = toApiSlug(moveName);
 
   const cached = await readCache(cacheKey, cacheDir);
   if (cached) {
@@ -77,7 +74,7 @@ async function fetchMoveData(
 ): Promise<MoveData | null> {
   try {
     const res = await fetchImpl(
-      `${POKEAPI_BASE}/move/${encodeURIComponent(toMoveSlug(moveName))}`,
+      `${POKEAPI_BASE}/move/${encodeURIComponent(toApiSlug(moveName))}`,
       { signal: AbortSignal.timeout(5000) }
     );
     if (!res.ok) {
@@ -88,10 +85,18 @@ async function fetchMoveData(
     }
 
     const data = await res.json();
+    const category = data.damage_class.name;
+    if (category !== "physical" && category !== "special" && category !== "status") {
+      console.error(
+        `PokeAPI move-data response for "${moveName}" has an unexpected damage class: "${category}"`
+      );
+      return null;
+    }
+
     return {
       name: moveName,
       type: data.type.name,
-      category: data.damage_class.name,
+      category,
       power: data.power,
       priority: data.priority,
     };

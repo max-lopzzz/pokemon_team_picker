@@ -95,4 +95,34 @@ describe("getMoveData", () => {
     expect(second).toBeNull();
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
+
+  it("strips punctuation from the move name when building the request URL", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(
+      mockPokeApiMoveResponse({ type: "steel", category: "status", power: null, priority: 0 })
+    );
+
+    await getMoveData("King's Shield", { cacheDir, fetchImpl });
+
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+    const requestedUrl = fetchImpl.mock.calls[0][0] as string;
+    expect(requestedUrl).toContain("kings-shield");
+    expect(requestedUrl).not.toContain("king's-shield");
+    expect(requestedUrl).not.toContain("king%27s-shield");
+  });
+
+  it("returns null when the response has an unrecognized damage class", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        type: { name: "normal" },
+        damage_class: { name: "not-a-real-category" },
+        power: 40,
+        priority: 0,
+      }),
+    });
+
+    const result = await getMoveData("Weird Move", { cacheDir, fetchImpl });
+
+    expect(result).toBeNull();
+  });
 });
