@@ -91,3 +91,11 @@ export interface LearnableMoves {
   tutor: string[];
   egg: string[];
 }
+
+export interface MoveData {
+  name: string;
+  type: string;
+  category: "physical" | "special" | "status";
+  power: number | null;
+  priority: number;
+}
