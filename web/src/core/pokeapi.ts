@@ -21,7 +21,16 @@ export async function getSpeciesInfo(
   if (cached) return cached;
 
   const fetched = await fetchSpeciesInfo(species, fetchImpl);
-  if (fetched) await writeCache(species, cacheDir, fetched);
+  if (fetched) {
+    try {
+      await writeCache(species, cacheDir, fetched);
+    } catch (err) {
+      console.error(
+        `Failed to write cache for species "${species}":`,
+        err instanceof Error ? err.message : String(err)
+      );
+    }
+  }
   return fetched;
 }
 
@@ -58,7 +67,12 @@ async function fetchSpeciesInfo(
     const res = await fetchImpl(
       `${POKEAPI_BASE}/pokemon/${species.toLowerCase()}`
     );
-    if (!res.ok) return null;
+    if (!res.ok) {
+      console.error(
+        `PokeAPI request failed for species "${species}": HTTP ${res.status}`
+      );
+      return null;
+    }
 
     const data = await res.json();
     return {
@@ -69,7 +83,11 @@ async function fetchSpeciesInfo(
       ),
       spriteUrl: data.sprites?.front_default ?? null,
     };
-  } catch {
+  } catch (err) {
+    console.error(
+      `PokeAPI request failed for species "${species}":`,
+      err instanceof Error ? err.message : String(err)
+    );
     return null;
   }
 }
