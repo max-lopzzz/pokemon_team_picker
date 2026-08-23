@@ -28,7 +28,7 @@ function isCacheMiss(entry: CacheEntry): entry is CacheMiss {
  * apostrophes stripped, whitespace collapsed to hyphens. E.g. "Mr. Mime" ->
  * "mr-mime", "Sirfetch'd" -> "sirfetchd".
  */
-function toApiSlug(species: string): string {
+export function toApiSlug(species: string): string {
   return species
     .toLowerCase()
     .replace(/[.']/g, "")

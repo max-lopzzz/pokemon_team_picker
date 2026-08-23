@@ -47,7 +47,9 @@ export async function addRosterPokemonAction(
   const level = Number(formData.get("level"));
   const nature = String(formData.get("nature") ?? "");
   const ability = String(formData.get("ability") ?? "");
-  const moves = formData.getAll("moves").map(String);
+  // Dedupe here: the same move can be checked via two different learn-method
+  // checkboxes (e.g. both "Level-up" and "TM/HM"), but it's still one move.
+  const moves = [...new Set(formData.getAll("moves").map(String))];
 
   const readStat = (prefix: "iv" | "ev", stat: keyof StatBlock) =>
     Number(formData.get(`${prefix}_${stat}`));
@@ -114,7 +116,7 @@ export async function addRosterPokemonAction(
   }
 
   addRosterPokemon({ game, species, level, nature, ability, ivs, evs, moves });
-  revalidatePath(`/${game}/roster`);
+  revalidatePath(`/${encodeURIComponent(game)}/roster`);
   return { success: true, errors: [] };
 }
 
@@ -123,5 +125,5 @@ export async function deleteRosterPokemonAction(
   id: number
 ): Promise<void> {
   deleteRosterPokemonQuery(id);
-  revalidatePath(`/${game}/roster`);
+  revalidatePath(`/${encodeURIComponent(game)}/roster`);
 }

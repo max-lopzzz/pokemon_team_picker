@@ -77,6 +77,22 @@ describe("getLearnableMoves", () => {
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
+  it("normalizes multi-word species names to PokeAPI's hyphenated slug", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(
+      mockPokeApiResponse([
+        { name: "thunderbolt", versionGroup: "sun-moon", method: "level-up" },
+      ])
+    );
+
+    await getLearnableMoves("Tapu Koko", "Sun", { cacheDir, fetchImpl });
+
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+    const requestedUrl = fetchImpl.mock.calls[0][0] as string;
+    expect(requestedUrl).toContain("tapu-koko");
+    expect(requestedUrl).not.toContain("tapu%20koko");
+    expect(requestedUrl).not.toContain("tapu koko");
+  });
+
   it("negative-caches a failed lookup so it does not refetch", async () => {
     const fetchImpl = vi.fn().mockResolvedValue({ ok: false, status: 404 });
 

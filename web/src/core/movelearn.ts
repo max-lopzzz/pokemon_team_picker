@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { GAME_TO_VERSION_GROUP } from "./versionGroups";
+import { toApiSlug } from "./pokeapi";
 import type { LearnableMoves } from "./types";
 
 const DEFAULT_CACHE_DIR = path.join(process.cwd(), ".cache", "pokeapi-moves");
@@ -39,7 +40,7 @@ export async function getLearnableMoves(
 
   const cacheDir = options.cacheDir ?? DEFAULT_CACHE_DIR;
   const fetchImpl = options.fetchImpl ?? fetch;
-  const cacheKey = `${species.toLowerCase()}-${versionGroup}`;
+  const cacheKey = `${toApiSlug(species)}-${versionGroup}`;
 
   const cached = await readCache(cacheKey, cacheDir);
   if (cached) {
@@ -87,7 +88,7 @@ async function fetchLearnableMoves(
 ): Promise<LearnableMoves | null> {
   try {
     const res = await fetchImpl(
-      `${POKEAPI_BASE}/pokemon/${encodeURIComponent(species.toLowerCase())}`,
+      `${POKEAPI_BASE}/pokemon/${encodeURIComponent(toApiSlug(species))}`,
       { signal: AbortSignal.timeout(5000) }
     );
     if (!res.ok) {
