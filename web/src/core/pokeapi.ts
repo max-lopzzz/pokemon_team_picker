@@ -2,8 +2,6 @@ import path from "node:path";
 import { fetchCached, toApiSlug, type FetchCachedParams } from "./apiCache";
 import type { SpeciesInfo } from "./types";
 
-export { toApiSlug };
-
 const DEFAULT_CACHE_DIR = path.join(process.cwd(), ".cache", "pokeapi");
 const POKEAPI_BASE = "https://pokeapi.co/api/v2";
 

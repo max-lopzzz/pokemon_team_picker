@@ -50,7 +50,7 @@ export async function fetchCached<T>(params: FetchCachedParams<T>): Promise<T | 
   const { cacheKey, cacheDir, url, fetchImpl, parse, errorLabel } = params;
 
   const cached = await readCache<T>(cacheKey, cacheDir);
-  if (cached) {
+  if (cached !== null) {
     return isCacheMiss(cached) ? null : cached;
   }
 
@@ -58,10 +58,7 @@ export async function fetchCached<T>(params: FetchCachedParams<T>): Promise<T | 
   try {
     await writeCache<T>(cacheKey, cacheDir, fetched ?? { __miss: true });
   } catch (err) {
-    console.error(
-      `Failed to write cache for "${cacheKey}":`,
-      err instanceof Error ? err.message : String(err)
-    );
+    console.error(`Failed to write cache for "${cacheKey}":`, err);
   }
   return fetched;
 }
@@ -111,10 +108,7 @@ async function fetchAndParse<T>(
     }
     return parsed;
   } catch (err) {
-    console.error(
-      `PokeAPI request failed for ${errorLabel}:`,
-      err instanceof Error ? err.message : String(err)
-    );
+    console.error(`PokeAPI request failed for ${errorLabel}:`, err);
     return null;
   }
 }
