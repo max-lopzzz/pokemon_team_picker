@@ -46,3 +46,48 @@ export interface SpeciesInfo {
   abilities: string[];
   spriteUrl: string | null;
 }
+
+export interface StatBlock {
+  hp: number;
+  atk: number;
+  def: number;
+  spa: number;
+  spd: number;
+  spe: number;
+}
+
+export interface Nature {
+  name: string;
+  plus: "atk" | "def" | "spa" | "spd" | "spe" | null;
+  minus: "atk" | "def" | "spa" | "spd" | "spe" | null;
+}
+
+export interface RosterPokemon {
+  id: number;
+  game: string;
+  species: string;
+  level: number;
+  nature: string;
+  ability: string;
+  ivs: StatBlock;
+  evs: StatBlock;
+  moves: string[];
+}
+
+export interface NewRosterPokemon {
+  game: string;
+  species: string;
+  level: number;
+  nature: string;
+  ability: string;
+  ivs: StatBlock;
+  evs: StatBlock;
+  moves: string[];
+}
+
+export interface LearnableMoves {
+  levelUp: string[];
+  machine: string[];
+  tutor: string[];
+  egg: string[];
+}
