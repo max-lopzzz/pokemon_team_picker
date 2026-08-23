@@ -140,7 +140,7 @@ export default function AddPokemonForm({ game }: { game: string }) {
         <legend>Moveset (up to 4)</legend>
         {learnablePool.length === 0 && <p>Enter a species to see learnable moves.</p>}
         {learnablePool.map(({ move, method }) => (
-          <label key={move}>
+          <label key={`${method}-${move}`}>
             <input type="checkbox" name="moves" value={move} />
             {move} ({method})
           </label>
