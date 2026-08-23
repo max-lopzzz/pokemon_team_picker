@@ -36,5 +36,12 @@ export function calculateDamageRange(
   const min = Math.floor(base * stab * typeEffectiveness * 0.85);
   const max = Math.floor(base * stab * typeEffectiveness * 1.0);
 
-  return { min, max };
+  // Games since Gen 5 clamp any non-immune hit to at least 1 damage, even
+  // when rounding at low levels/power would otherwise compute to 0. A true
+  // type immunity (typeEffectiveness === 0) must stay {min: 0, max: 0} so
+  // hitsToKO can still resolve to Infinity for genuinely impossible KOs.
+  const clampedMin = typeEffectiveness > 0 ? Math.max(1, min) : min;
+  const clampedMax = typeEffectiveness > 0 ? Math.max(1, max) : max;
+
+  return { min: clampedMin, max: clampedMax };
 }

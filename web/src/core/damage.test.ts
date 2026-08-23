@@ -65,4 +65,34 @@ describe("calculateDamageRange", () => {
     const result = calculateDamageRange(50, attackerStats, defenderStats, move, ["normal"], ["ghost"]);
     expect(result).toEqual({ min: 0, max: 0 });
   });
+
+  it("floors a low-level, low-power, doubly-resisted hit up to a minimum of 1 damage", () => {
+    // Hand-verified: level 5, atk 10, def 20, power 10, no STAB, 0.25x
+    // effectiveness (fire vs water/dragon: 0.5 * 0.5).
+    //   floor(2*5/5 + 2) = 4
+    //   floor(4 * 10 * (10/20)) = floor(20) = 20
+    //   floor(20 / 50) = 0; base = 0 + 2 = 2
+    //   max (unclamped) = floor(2 * 1 * 0.25 * 1.0) = floor(0.5) = 0
+    //   min (unclamped) = floor(2 * 1 * 0.25 * 0.85) = floor(0.425) = 0
+    // Both round to 0 pre-clamp; since effectiveness > 0 (not immune),
+    // both should be clamped up to 1.
+    const lowLevelAttacker = { hp: 20, atk: 10, def: 10, spa: 10, spd: 10, spe: 10 };
+    const lowLevelDefender = { hp: 20, atk: 10, def: 20, spa: 10, spd: 10, spe: 10 };
+    const move: MoveData = {
+      name: "ember",
+      type: "fire",
+      category: "physical",
+      power: 10,
+      priority: 0,
+    };
+    const result = calculateDamageRange(
+      5,
+      lowLevelAttacker,
+      lowLevelDefender,
+      move,
+      ["normal"],
+      ["water", "dragon"]
+    );
+    expect(result).toEqual({ min: 1, max: 1 });
+  });
 });
