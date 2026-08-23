@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getEncounterTeam } from "@/core/queries";
+import { getEncounterTeam, listEncounters } from "@/core/queries";
 import { getSpeciesInfo } from "@/core/pokeapi";
 
 export default async function EncounterPage({
@@ -7,10 +7,17 @@ export default async function EncounterPage({
 }: {
   params: Promise<{ game: string; gym: string; encounterId: string }>;
 }) {
-  const { encounterId } = await params;
+  const { game, gym, encounterId } = await params;
+  const gameName = decodeURIComponent(game);
+  const gymName = decodeURIComponent(gym);
   const team = getEncounterTeam(Number(encounterId));
 
   if (!team) {
+    notFound();
+  }
+
+  const encounters = listEncounters(gameName, gymName);
+  if (!encounters.some((e) => e.id === team.encounter.id)) {
     notFound();
   }
 
