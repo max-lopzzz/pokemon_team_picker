@@ -25,4 +25,18 @@ describe("getGen23CritChance", () => {
     expect(gen2Chance).toBeCloseTo(0.25);
     expect(gen3Chance).toBeCloseTo(0.125);
   });
+
+  it("Gen 3, Gen 4, and Gen 5 all return identical values (they share one table), for both highCritRate states", () => {
+    expect(getGen23CritChance(3, false)).toBe(getGen23CritChance(4, false));
+    expect(getGen23CritChance(4, false)).toBe(getGen23CritChance(5, false));
+    expect(getGen23CritChance(3, true)).toBe(getGen23CritChance(4, true));
+    expect(getGen23CritChance(4, true)).toBe(getGen23CritChance(5, true));
+  });
+
+  it("Gen 4 and Gen 5 values match the known Gen 3 constants exactly", () => {
+    expect(getGen23CritChance(4, false)).toBeCloseTo(1 / 16);
+    expect(getGen23CritChance(5, false)).toBeCloseTo(1 / 16);
+    expect(getGen23CritChance(4, true)).toBeCloseTo(1 / 8);
+    expect(getGen23CritChance(5, true)).toBeCloseTo(1 / 8);
+  });
 });
