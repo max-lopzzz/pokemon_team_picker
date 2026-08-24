@@ -113,8 +113,13 @@ All in `web/src/core/`, prefixed `gen23`:
 
 - **`gen23TypeChart.ts`** — generated the same way `gen1TypeChart.ts` is:
   derives from the already-verified modern `TYPE_CHART`, dropping the
-  `fairy` row/column (17×17 = 289 pairs) and applying one override:
-  `steel: { ghost: 0.5, dark: 0.5 }`.
+  `fairy` row/column (17×17 = 289 pairs) and applying one override. The
+  override table is keyed by *attacking* type first, matching this
+  codebase's established `TYPE_CHART[attackingType][defendingType]`
+  convention — "Steel resisted Ghost/Dark" means Ghost and Dark are the
+  attackers, so it's `ghost: { steel: 0.5 }, dark: { steel: 0.5 }`, not
+  `steel: { ghost: 0.5, dark: 0.5 }` (which would incorrectly nerf
+  Steel's own offensive moves instead).
   `getGen23TypeEffectiveness(attackingType, defendingType): number`.
 - **`gen23Category.ts`** — a hardcoded type→category table (this is a
   fixed historical rule, not data from any API):
