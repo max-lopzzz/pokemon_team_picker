@@ -93,14 +93,20 @@ function outcomeFor(
   return { damageRange, hitsToKO };
 }
 
-/** Returns `null` if any species/move lookup fails, the move is a status
- * move, a species has no historically-valid typing for the target
- * generation (see `getHistoricalTypes`), or — on the Gen 3 branch only —
- * the attacker's nature name doesn't match any known nature. */
+/** Returns `null` if `generation` is not 2 or 3 (a runtime-only guard, since
+ * the `2 | 3` type only protects callers that respect TypeScript), any
+ * species/move lookup fails, the move is a status move, a species has no
+ * historically-valid typing for the target generation (see
+ * `getHistoricalTypes`), or — on the Gen 3 branch only — the attacker's
+ * nature name doesn't match any known nature. */
 export async function evaluateGen23Matchup(
   input: Gen23MatchupInput
 ): Promise<Gen23MatchupResult | null> {
   const { generation, attacker, attackerMove, defender } = input;
+
+  if (generation !== 2 && generation !== 3) {
+    return null;
+  }
 
   const [attackerTypes, defenderTypes, attackerBase, defenderBase, move] = await Promise.all([
     getHistoricalTypes(attacker.species, generation),

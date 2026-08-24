@@ -1,5 +1,8 @@
 import type { StatBlock } from "./types";
 
+/** Gen 2 also uses this exact formula — Gen 2 kept Gen 1's DV/Stat-Experience
+ * stat system unchanged, so `gen23Matchup.ts`'s Gen 2 branch calling this
+ * function is intentional, not a copy-paste bug. */
 export function calculateGen1Stats(
   base: StatBlock,
   dvs: StatBlock,

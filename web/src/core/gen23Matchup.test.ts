@@ -75,6 +75,8 @@ describe("evaluateGen23Matchup", () => {
       },
       moveOrder: "defender",
     });
+    expect(mockedGetHistoricalTypes).toHaveBeenCalledWith("Attacker", 2);
+    expect(mockedGetHistoricalTypes).toHaveBeenCalledWith("Defender", 2);
   });
 
   it("computes an exact hand-verified Gen 3 result (modern IV/EV/nature stats, Modest nature genuinely boosting Special Attack)", async () => {
@@ -99,6 +101,8 @@ describe("evaluateGen23Matchup", () => {
       },
       moveOrder: "defender",
     });
+    expect(mockedGetHistoricalTypes).toHaveBeenCalledWith("Attacker", 3);
+    expect(mockedGetHistoricalTypes).toHaveBeenCalledWith("Defender", 3);
   });
 
   it("returns null for a status move", async () => {
@@ -200,5 +204,18 @@ describe("evaluateGen23Matchup", () => {
 
     expect(result!.normal.damageRange).toEqual({ min: 0, max: 0 });
     expect(result!.normal.hitsToKO.max).toBe(Infinity);
+  });
+
+  it("returns null for a runtime generation value outside 2 | 3", async () => {
+    setupMocks();
+
+    const result = await evaluateGen23Matchup({
+      generation: 4 as never,
+      attacker: { species: "Attacker", level: 50, ivs: perfectIvs, evs: zeroEvs, nature: "Hardy" },
+      attackerMove: "Psybeam",
+      defender: { species: "Defender", level: 50 },
+    });
+
+    expect(result).toBeNull();
   });
 });

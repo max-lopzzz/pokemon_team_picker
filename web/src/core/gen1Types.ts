@@ -1,3 +1,8 @@
+/** Generation-generic historical-typing resolution. `getHistoricalTypes` is
+ * the general-purpose entry point (any generation); `getGen1Types` is a
+ * thin Gen-1-specific convenience wrapper around it. Despite the filename,
+ * this module is no longer Gen-1-only. */
+
 import path from "node:path";
 import { fetchCached, toApiSlug, type FetchCachedParams } from "./apiCache";
 
@@ -71,7 +76,14 @@ function typesForGeneration(
  * types when no historical entry covers the target generation. Returns
  * `null` if the resolved typing includes a type that didn't exist yet as
  * of that generation — this represents "no valid typing could be
- * determined" rather than silently returning an anachronistic type. */
+ * determined" rather than silently returning an anachronistic type.
+ *
+ * Caveat: this does NOT verify the species existed as of the target
+ * generation — a species that debuted after `generation` will resolve to
+ * its current typing (since it has no `past_types` entries to reject via
+ * the type-validity guard) and be returned as if it were historically
+ * accurate. Callers are responsible for only querying era-appropriate
+ * species (e.g. species actually obtainable in a Gen `generation` game). */
 export async function getHistoricalTypes(
   species: string,
   generation: number,
