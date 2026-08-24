@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getEncounterTeam, listEncounters } from "@/core/queries";
 import { getSpeciesInfo } from "@/core/pokeapi";
+import RecommendTeamButton from "./RecommendTeamButton";
 
 export default async function EncounterPage({
   params,
@@ -50,6 +51,7 @@ export default async function EncounterPage({
           </li>
         ))}
       </ul>
+      <RecommendTeamButton gameName={gameName} encounterId={team.encounter.id} />
     </main>
   );
 }
