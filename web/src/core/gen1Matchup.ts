@@ -1,7 +1,7 @@
 import { getGen1Types } from "./gen1Types";
 import { getBaseStats } from "./baseStats";
 import { getMoveData } from "./moveData";
-import { calculateGen1Stats } from "./gen1Stats";
+import { calculateGen1Stats, ivsToDvs, evsToStatExp, PERFECT_DV, ZERO_STAT_EXP } from "./gen1Stats";
 import { calculateGen1DamageRange } from "./gen1Damage";
 import { getGen1CritChance } from "./gen1Crit";
 import type { StatBlock, MoveData } from "./types";
@@ -46,34 +46,6 @@ export interface Gen1MatchupResult {
   /** `chance` is a probability in [0, 1], not a percentage. */
   criticalHit: { chance: number } & Gen1MatchupOutcome;
   moveOrder: "attacker" | "defender" | "tie";
-}
-
-const PERFECT_DV: StatBlock = { hp: 15, atk: 15, def: 15, spa: 15, spd: 15, spe: 15 };
-const ZERO_STAT_EXP: StatBlock = { hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 };
-
-function ivsToDvs(ivs: StatBlock): StatBlock {
-  const toDv = (iv: number) => Math.min(15, Math.max(0, Math.round(iv / 2)));
-  return {
-    hp: toDv(ivs.hp),
-    atk: toDv(ivs.atk),
-    def: toDv(ivs.def),
-    spa: toDv(ivs.spa),
-    spd: toDv(ivs.spd),
-    spe: toDv(ivs.spe),
-  };
-}
-
-function evsToStatExp(evs: StatBlock): StatBlock {
-  const toStatExp = (ev: number) =>
-    Math.min(65535, Math.max(0, Math.round((ev / 252) * 65535)));
-  return {
-    hp: toStatExp(evs.hp),
-    atk: toStatExp(evs.atk),
-    def: toStatExp(evs.def),
-    spa: toStatExp(evs.spa),
-    spd: toStatExp(evs.spd),
-    spe: toStatExp(evs.spe),
-  };
 }
 
 /** Gen 1 has a single "Special" stat; represent it by using base Special
