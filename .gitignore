@@ -2,4 +2,5 @@ web/node_modules/
 web/.next/
 web/.cache/
 web/next-env.d.ts
+web/tsconfig.tsbuildinfo
 roster.db
