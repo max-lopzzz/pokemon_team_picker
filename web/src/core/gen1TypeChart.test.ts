@@ -18,7 +18,7 @@ describe("GEN1_TYPE_CHART", () => {
     expect(getGen1TypeEffectiveness("ghost", "ghost")).toBe(0);
     expect(getGen1TypeEffectiveness("bug", "poison")).toBe(2);
     expect(getGen1TypeEffectiveness("poison", "bug")).toBe(2);
-    expect(getGen1TypeEffectiveness("ice", "poison")).toBe(1);
+    expect(getGen1TypeEffectiveness("ice", "fire")).toBe(1);
   });
 
   it("matches the modern chart for unchanged matchups", () => {

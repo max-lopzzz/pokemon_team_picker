@@ -26,7 +26,7 @@ const GEN1_OVERRIDES: Record<string, Record<string, number>> = {
   ghost: { psychic: 0, ghost: 0 },
   bug: { poison: 2 },
   poison: { bug: 2 },
-  ice: { poison: 1 },
+  ice: { fire: 1 },
 };
 
 function buildGen1TypeChart(): Record<string, Record<string, number>> {
