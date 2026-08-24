@@ -136,4 +136,36 @@ describe("evaluateGen1Matchup", () => {
     expect(result!.normal.damageRange).toEqual({ min: 0, max: 0 });
     expect(result!.normal.hitsToKO.max).toBe(Infinity);
   });
+
+  it("uses the special attack/defense stats, exercising the single-Special-stat override", async () => {
+    setupMocks({
+      move: {
+        name: "psybeam",
+        type: "psychic",
+        category: "special",
+        power: 60,
+        priority: 0,
+        highCritRate: false,
+      },
+    });
+
+    const result = await evaluateGen1Matchup({
+      attacker: { species: "Attacker", level: 50, ivs: perfectIvs, evs: zeroEvs },
+      attackerMove: "Psybeam",
+      defender: { species: "Defender", level: 50 },
+    });
+
+    expect(result).toEqual({
+      normal: {
+        damageRange: { min: 23, max: 28 },
+        hitsToKO: { min: 5, max: 6 },
+      },
+      criticalHit: {
+        chance: 22 / 256,
+        damageRange: { min: 44, max: 52 },
+        hitsToKO: { min: 3, max: 3 },
+      },
+      moveOrder: "defender",
+    });
+  });
 });
