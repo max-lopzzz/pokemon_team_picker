@@ -91,3 +91,15 @@ export function getEncounterTeam(encounterId: number): EncounterTeam | null {
 
   return { encounter, pokemon };
 }
+
+export function getGameGeneration(gameName: string): number | null {
+  const row = getDb()
+    .prepare(
+      `SELECT gen.number AS number
+       FROM games g
+       JOIN generations gen ON g.generation_id = gen.id
+       WHERE g.name = ?`
+    )
+    .get(gameName) as { number: number } | undefined;
+  return row ? row.number : null;
+}

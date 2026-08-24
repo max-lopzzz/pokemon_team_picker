@@ -5,6 +5,7 @@ import {
   listGyms,
   listEncounters,
   getEncounterTeam,
+  getGameGeneration,
 } from "./queries";
 
 describe("listGenerations", () => {
@@ -72,5 +73,15 @@ describe("getEncounterTeam", () => {
 
   it("returns null for an unknown encounter id", () => {
     expect(getEncounterTeam(999999)).toBeNull();
+  });
+});
+
+describe("getGameGeneration", () => {
+  it("returns the generation number for a known game", () => {
+    expect(getGameGeneration("Red")).toBe(1);
+  });
+
+  it("returns null for an unknown game name", () => {
+    expect(getGameGeneration("NotAGame")).toBeNull();
   });
 });
