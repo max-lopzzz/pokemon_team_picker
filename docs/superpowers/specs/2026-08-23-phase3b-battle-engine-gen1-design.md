@@ -59,7 +59,13 @@ This spec covers Gen 1 (Red/Blue/Green/Yellow) specifically.
    - `ghost → ghost`: `0` (not `2`) — a related Gen 1 quirk.
    - `bug → poison`: `2` (not `0.5`)
    - `poison → bug`: `2` (not `1`)
-   - `ice → poison`: `1` (not `0.5`)
+   - `ice → fire`: `1` (not `0.5`) — Ice-type moves were neutral against
+     Fire-type Pokémon in Gen 1 only, becoming not-very-effective from
+     Gen 2 onward. (Corrected during Task 2's implementation: the
+     original research for this spec mistakenly attributed this
+     deviation to `ice → poison`, which has no Gen 1-specific change at
+     all — caught and independently re-verified during the Phase 3b
+     implementation's task review.)
 
 This keeps the same "generate from a base, don't hand-type a large table"
 discipline Phase 3a established, while being explicit that the override

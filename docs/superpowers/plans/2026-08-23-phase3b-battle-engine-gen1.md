@@ -594,7 +594,7 @@ describe("GEN1_TYPE_CHART", () => {
     expect(getGen1TypeEffectiveness("ghost", "ghost")).toBe(0);
     expect(getGen1TypeEffectiveness("bug", "poison")).toBe(2);
     expect(getGen1TypeEffectiveness("poison", "bug")).toBe(2);
-    expect(getGen1TypeEffectiveness("ice", "poison")).toBe(1);
+    expect(getGen1TypeEffectiveness("ice", "fire")).toBe(1);
   });
 
   it("matches the modern chart for unchanged matchups", () => {
@@ -647,7 +647,7 @@ const GEN1_OVERRIDES: Record<string, Record<string, number>> = {
   ghost: { psychic: 0, ghost: 0 },
   bug: { poison: 2 },
   poison: { bug: 2 },
-  ice: { poison: 1 },
+  ice: { fire: 1 },
 };
 
 function buildGen1TypeChart(): Record<string, Record<string, number>> {
