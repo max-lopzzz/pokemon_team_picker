@@ -119,9 +119,14 @@ modules (which stay unchanged and continue serving Gen 6-9):
 - **`gen1Matchup.ts`** — the orchestrator, parallel to Phase 3a's
   `matchup.ts` but Gen 1-flavored. Reuses Phase 1's `getSpeciesInfo` only
   for abilities/sprite (not types — types come from `gen1Types.ts`), and
-  Phase 3a's `getBaseStats`/`getMoveData` unchanged (base stats and move
-  data are generation-invariant in PokeAPI). Returns both a non-crit
-  result and a crit result.
+  Phase 3a's `getBaseStats`/`getMoveData` unchanged. **Known approximation:**
+  base stats and move types/power are taken from PokeAPI's current values,
+  not era-adjusted — several Gen 1 species received base-stat buffs in
+  Gen VI (e.g. Butterfree's Special Attack 80→90), and a few moves changed
+  type after Gen 1 (e.g. Bite Normal→Dark). PokeAPI's `/move` endpoint
+  exposes a parallel `past_values` field for this, mirroring `past_types`,
+  but wiring it up is out of scope for this phase — flagged here rather
+  than asserted away. Returns both a non-crit result and a crit result.
 
 ## `MoveData` extension
 
