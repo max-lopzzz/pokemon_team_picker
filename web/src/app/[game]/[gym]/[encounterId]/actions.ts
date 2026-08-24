@@ -103,7 +103,7 @@ export async function getTeamRecommendationAction(
               nature: rosterPokemon.nature,
             },
             move,
-            { species: opponent.species, level: opponentLevel }
+            { species: opponent.species, level: opponentLevel, dynamaxState: opponent.dynamax }
           );
           return result ? { move, result } : null;
         })
@@ -122,8 +122,10 @@ export async function getTeamRecommendationAction(
   const assembled = assembleTeam(scoreMatrix, usableRoster, scoreableOpponents);
 
   return {
-    assignments: assembled.assignments,
-    uncoveredOpponents: [...preUncoveredOpponents, ...assembled.uncoveredOpponents],
+    assignments: [...assembled.assignments].sort((a, b) => a.opponent.position - b.opponent.position),
+    uncoveredOpponents: [...preUncoveredOpponents, ...assembled.uncoveredOpponents].sort(
+      (a, b) => a.position - b.position
+    ),
     excludedRosterPokemon,
   };
 }

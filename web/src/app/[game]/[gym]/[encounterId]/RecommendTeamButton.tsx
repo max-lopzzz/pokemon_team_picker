@@ -12,12 +12,23 @@ export default function RecommendTeamButton({
 }) {
   const [recommendation, setRecommendation] = useState<TeamRecommendation | null>(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleClick() {
     setLoading(true);
-    const result = await getTeamRecommendationAction(gameName, encounterId);
-    setRecommendation(result);
-    setLoading(false);
+    setError(null);
+    try {
+      const result = await getTeamRecommendationAction(gameName, encounterId);
+      if (!result) {
+        setError("Couldn't load this encounter.");
+      } else {
+        setRecommendation(result);
+      }
+    } catch {
+      setError("Something went wrong computing the recommendation.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   function describeSpeed(movesFirst: "attacker" | "defender" | "tie"): string {
@@ -26,26 +37,35 @@ export default function RecommendTeamButton({
     return "they go first";
   }
 
+  function formatHits(n: number): string {
+    return n >= 1000 ? "∞" : String(n);
+  }
+
   return (
     <section>
       <button onClick={handleClick} disabled={loading}>
         {loading ? "Computing..." : "Recommend team"}
       </button>
 
+      {error && <p>{error}</p>}
+
       {recommendation && (
         <div>
-          {recommendation.assignments.length === 0 && (
-            <p>Add Pokémon with moves to your roster to get a recommendation.</p>
-          )}
+          {recommendation.assignments.length === 0 &&
+            (recommendation.excludedRosterPokemon.length > 0 ||
+              recommendation.uncoveredOpponents.every(
+                (o) => o.reason === "no roster Pokémon available"
+              )) && <p>Add Pokémon with moves to your roster to get a recommendation.</p>}
 
           {recommendation.assignments.length > 0 && (
             <ul>
               {recommendation.assignments.map((a) => (
                 <li key={a.opponent.position}>
                   vs {a.opponent.species}: bring {a.species} using {a.move} —{" "}
-                  {describeSpeed(a.summary.movesFirst)}, {a.summary.myHitsToKO.min}-
-                  {a.summary.myHitsToKO.max} hits to KO them, they&apos;d need{" "}
-                  {a.summary.theirHitsToKoTaken.min}-{a.summary.theirHitsToKoTaken.max}
+                  {describeSpeed(a.summary.movesFirst)}, {formatHits(a.summary.myHitsToKO.min)}-
+                  {formatHits(a.summary.myHitsToKO.max)} hits to KO them, they&apos;d need{" "}
+                  {formatHits(a.summary.theirHitsToKoTaken.min)}-
+                  {formatHits(a.summary.theirHitsToKoTaken.max)}
                 </li>
               ))}
             </ul>

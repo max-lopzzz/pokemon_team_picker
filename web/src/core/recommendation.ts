@@ -147,6 +147,19 @@ export function assembleTeam(
 
     if (bottleneckOpponentIndex === -1) break; // everything remaining just got marked uncovered this pass
 
+    if (assignments.length >= 6) {
+      // Defensive cap: the team is already full. Everything still
+      // remaining is uncovered for that reason alone.
+      for (const opponentIndex of remainingOpponentIndices) {
+        uncoveredOpponents.push({
+          species: opponents[opponentIndex].species,
+          position: opponents[opponentIndex].position,
+          reason: "team is already at the 6-Pokémon cap",
+        });
+      }
+      break;
+    }
+
     const opponent = opponents[bottleneckOpponentIndex];
     const rosterPokemon = roster[bottleneckRosterIndex];
     const cell = scoreMatrix[bottleneckRosterIndex][bottleneckOpponentIndex]!;

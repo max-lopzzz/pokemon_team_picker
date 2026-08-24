@@ -232,4 +232,37 @@ describe("assembleTeam", () => {
       { species: "X", position: 1, reason: "roster too small to cover every opponent" },
     ]);
   });
+
+  it("caps the assembled team at 6 even when more roster/opponent pairs are scoreable", () => {
+    function mockScore(score: number): MatchupScore {
+      return {
+        score,
+        move: "M",
+        myHitsToKO: { min: 1, max: 1 },
+        theirHitsToKoTaken: { min: 1, max: 1 },
+        movesFirst: "attacker",
+      };
+    }
+
+    const roster = [1, 2, 3, 4, 5, 6, 7].map((id) => rosterMon(id, `R${id}`));
+    const opponents = [1, 2, 3, 4, 5, 6, 7].map((pos) => opponentMon(pos, `O${pos}`));
+
+    // Fully connected: every roster Pokémon can score every opponent, all
+    // with distinct scores so the bottleneck-first algorithm has a
+    // well-defined assignment order and would happily assign all 7
+    // without the cap.
+    const scoreMatrix: (MatchupScore | null)[][] = roster.map((_, rosterIndex) =>
+      opponents.map((_, opponentIndex) => mockScore(rosterIndex * 10 + opponentIndex))
+    );
+
+    const result = assembleTeam(scoreMatrix, roster, opponents);
+
+    expect(result.assignments).toHaveLength(6);
+    expect(result.uncoveredOpponents).toHaveLength(1);
+    expect(result.uncoveredOpponents[0]).toEqual({
+      species: "O7",
+      position: 7,
+      reason: "team is already at the 6-Pokémon cap",
+    });
+  });
 });
