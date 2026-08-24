@@ -324,9 +324,12 @@ All in `web/src/core/`, plus one new UI piece:
   answer to one opponent, but also a strong answer to another with an
   easy alternative) but bottleneck-first correctly reserves it for the
   opponent with no other option.
-- `getGameGeneration`: a query test against a temp SQLite DB (same
-  pattern as `queries.test.ts`), confirming a known game name resolves
-  to the right generation number and an unknown name returns `null`.
+- `getGameGeneration`: `queries.ts`'s `getDb()` is hardcoded to the real,
+  read-only `gym_leaders.db` at the repo root (no `dbPath` parameter,
+  unlike `rosterQueries.ts`) — so, matching `queries.test.ts`'s actual
+  established pattern, this is a query test against the real committed
+  data, not a temp DB: confirm `getGameGeneration("Red")` returns `1`
+  and `getGameGeneration("NotAGame")` returns `null`.
 - UI: manual browser verification of the full flow (view an encounter →
   click "Recommend team" → see a sensible team) before calling the phase
   done, matching every prior UI-touching phase's test plan. Both a
