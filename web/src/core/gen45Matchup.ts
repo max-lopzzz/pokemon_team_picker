@@ -30,8 +30,14 @@ export interface Gen45MatchupDefender {
 
 /** `generation` affects ONLY the historical-typing lookup
  * (`getHistoricalTypes`) — stats, crit chance, and damage are identical
- * for Gen 4 and Gen 5, since these two eras don't mechanically differ for
- * any formula this module implements. */
+ * for Gen 4 and Gen 5, since Gen 4 and Gen 5 don't differ for any formula
+ * this module models, at the precision this module models it. Known,
+ * unmodelled differences: Gen 5's fixed-point damage-modifier rounding
+ * chain (invisible here since this module's formula already collapses
+ * STAB/type/crit/random into one coarser multiply-then-floor step), and
+ * Gen 5's move-power rebalances (this app always uses PokeAPI's current
+ * move data regardless of queried generation, per every prior phase's
+ * documented approximation). */
 export interface Gen45MatchupInput {
   generation: 4 | 5;
   attacker: Gen45MatchupAttacker;
@@ -86,14 +92,20 @@ function outcomeFor(
   return { damageRange, hitsToKO };
 }
 
-/** Returns `null` if any species/move lookup fails, the move is a status
- * move, a species has no historically-valid typing for the target
- * generation (see `getHistoricalTypes`), or the attacker's nature name
- * doesn't match any known nature. */
+/** Returns `null` if `generation` is not 4 or 5 (a runtime-only guard, since
+ * the `4 | 5` type only protects callers that respect TypeScript), any
+ * species/move lookup fails, the move is a status move, a species has no
+ * historically-valid typing for the target generation (see
+ * `getHistoricalTypes`), or the attacker's nature name doesn't match any
+ * known nature. */
 export async function evaluateGen45Matchup(
   input: Gen45MatchupInput
 ): Promise<Gen45MatchupResult | null> {
   const { generation, attacker, attackerMove, defender } = input;
+
+  if (generation !== 4 && generation !== 5) {
+    return null;
+  }
 
   const [attackerTypes, defenderTypes, attackerBase, defenderBase, move] = await Promise.all([
     getHistoricalTypes(attacker.species, generation),

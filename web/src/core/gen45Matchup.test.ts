@@ -197,4 +197,17 @@ describe("evaluateGen45Matchup", () => {
     expect(result!.normal.damageRange).toEqual({ min: 0, max: 0 });
     expect(result!.normal.hitsToKO.max).toBe(Infinity);
   });
+
+  it("returns null for a runtime generation value outside 4 | 5", async () => {
+    setupMocks();
+
+    const result = await evaluateGen45Matchup({
+      generation: 6 as never,
+      attacker: { species: "Attacker", level: 50, ivs: perfectIvs, evs: zeroEvs, nature: "Hardy" },
+      attackerMove: "Psybeam",
+      defender: { species: "Defender", level: 50 },
+    });
+
+    expect(result).toBeNull();
+  });
 });

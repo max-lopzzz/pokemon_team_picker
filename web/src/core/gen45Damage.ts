@@ -1,3 +1,5 @@
+// Despite the filename, gen23TypeChart.ts now serves Gen 2 through Gen 5 —
+// the Gen 2-5 chart (Steel resisting Ghost/Dark) is unchanged across that span.
 import { getGen23TypeEffectiveness } from "./gen23TypeChart";
 import type { StatBlock, MoveData } from "./types";
 

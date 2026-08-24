@@ -1,3 +1,8 @@
+/** Generation-generic critical-hit-chance resolution. Despite the filename,
+ * this module is no longer Gen-2/3-only — it was widened to also accept
+ * `generation: 4 | 5`, since Gen 4-5 use the same stage/chance tables as
+ * Gen 3. */
+
 const GEN2_STAGE_CHANCES = [17 / 256, 1 / 8, 1 / 4, 85 / 256, 1 / 2];
 const GEN3_STAGE_CHANCES = [1 / 16, 1 / 8, 1 / 4, 1 / 3, 1 / 2];
 
