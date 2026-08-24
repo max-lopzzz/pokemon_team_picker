@@ -13,6 +13,7 @@ describe("calculateDamageRange", () => {
       category: "physical",
       power: 80,
       priority: 0,
+      highCritRate: false,
     };
     const result = calculateDamageRange(50, attackerStats, defenderStats, move, ["fire"], ["normal"]);
     expect(result).toEqual({ min: 47, max: 55 });
@@ -25,6 +26,7 @@ describe("calculateDamageRange", () => {
       category: "physical",
       power: 80,
       priority: 0,
+      highCritRate: false,
     };
     const result = calculateDamageRange(50, attackerStats, defenderStats, move, ["grass"], ["fire"]);
     expect(result).toEqual({ min: 62, max: 74 });
@@ -37,6 +39,7 @@ describe("calculateDamageRange", () => {
       category: "special",
       power: 90,
       priority: 0,
+      highCritRate: false,
     };
     const result = calculateDamageRange(50, attackerStats, defenderStats, move, ["fire"], ["normal"]);
     expect(result).toEqual({ min: 36, max: 43 });
@@ -49,6 +52,7 @@ describe("calculateDamageRange", () => {
       category: "status",
       power: null,
       priority: 0,
+      highCritRate: false,
     };
     const result = calculateDamageRange(50, attackerStats, defenderStats, move, ["normal"], ["normal"]);
     expect(result).toBeNull();
@@ -61,6 +65,7 @@ describe("calculateDamageRange", () => {
       category: "physical",
       power: 40,
       priority: 0,
+      highCritRate: false,
     };
     const result = calculateDamageRange(50, attackerStats, defenderStats, move, ["normal"], ["ghost"]);
     expect(result).toEqual({ min: 0, max: 0 });
@@ -84,6 +89,7 @@ describe("calculateDamageRange", () => {
       category: "physical",
       power: 10,
       priority: 0,
+      highCritRate: false,
     };
     const result = calculateDamageRange(
       5,

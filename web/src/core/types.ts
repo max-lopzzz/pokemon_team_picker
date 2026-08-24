@@ -98,4 +98,5 @@ export interface MoveData {
   category: "physical" | "special" | "status";
   power: number | null;
   priority: number;
+  highCritRate: boolean;
 }

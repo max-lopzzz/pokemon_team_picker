@@ -30,6 +30,7 @@ export async function getMoveData(
         damage_class?: { name: string };
         power: number | null;
         priority: number;
+        meta?: { crit_rate: number };
       };
       if (!d.type || !d.damage_class) return null;
 
@@ -44,6 +45,7 @@ export async function getMoveData(
         category,
         power: d.power,
         priority: d.priority,
+        highCritRate: (d.meta?.crit_rate ?? 0) > 0,
       };
     },
   };

@@ -9,6 +9,7 @@ function mockPokeApiMoveResponse(data: {
   category: "physical" | "special" | "status";
   power: number | null;
   priority: number;
+  critRate?: number;
 }) {
   return {
     ok: true,
@@ -17,6 +18,7 @@ function mockPokeApiMoveResponse(data: {
       damage_class: { name: data.category },
       power: data.power,
       priority: data.priority,
+      meta: { crit_rate: data.critRate ?? 0 },
     }),
   };
 }
@@ -45,6 +47,7 @@ describe("getMoveData", () => {
       category: "physical",
       power: 40,
       priority: 0,
+      highCritRate: false,
     });
   });
 
@@ -61,6 +64,7 @@ describe("getMoveData", () => {
       category: "status",
       power: null,
       priority: 0,
+      highCritRate: false,
     });
   });
 
@@ -72,6 +76,16 @@ describe("getMoveData", () => {
     const result = await getMoveData("Quick Attack", { cacheDir, fetchImpl });
 
     expect(result!.priority).toBe(1);
+  });
+
+  it("marks a high-crit-rate move (e.g. Slash) as highCritRate: true", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(
+      mockPokeApiMoveResponse({ type: "normal", category: "physical", power: 70, priority: 0, critRate: 1 })
+    );
+
+    const result = await getMoveData("Slash", { cacheDir, fetchImpl });
+
+    expect(result!.highCritRate).toBe(true);
   });
 
   it("caches the result and does not refetch on a second call", async () => {

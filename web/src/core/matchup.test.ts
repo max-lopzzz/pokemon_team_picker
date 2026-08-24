@@ -24,6 +24,7 @@ const vineWhip: MoveData = {
   category: "physical",
   power: 45,
   priority: 0,
+  highCritRate: false,
 };
 
 function setupMocks(overrides?: {
@@ -71,7 +72,7 @@ describe("evaluateMatchup", () => {
 
   it("returns 'attacker' move order for a positive-priority move even with lower Speed", async () => {
     setupMocks({
-      move: { name: "quick-attack", type: "normal", category: "physical", power: 40, priority: 1 },
+      move: { name: "quick-attack", type: "normal", category: "physical", power: 40, priority: 1, highCritRate: false },
     });
 
     const result = await evaluateMatchup({
@@ -85,7 +86,7 @@ describe("evaluateMatchup", () => {
 
   it("returns null for a status move", async () => {
     setupMocks({
-      move: { name: "growl", type: "normal", category: "status", power: null, priority: 0 },
+      move: { name: "growl", type: "normal", category: "status", power: null, priority: 0, highCritRate: false },
     });
 
     const result = await evaluateMatchup({
@@ -144,7 +145,7 @@ describe("evaluateMatchup", () => {
     setupMocks({
       attackerTypes: ["normal"],
       defenderTypes: ["ghost"],
-      move: { name: "tackle", type: "normal", category: "physical", power: 40, priority: 0 },
+      move: { name: "tackle", type: "normal", category: "physical", power: 40, priority: 0, highCritRate: false },
     });
 
     const result = await evaluateMatchup({
