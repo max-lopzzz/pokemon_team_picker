@@ -6,6 +6,10 @@ import { calculateGen1DamageRange } from "./gen1Damage";
 import { getGen1CritChance } from "./gen1Crit";
 import type { StatBlock, MoveData } from "./types";
 
+/** `ivs`/`evs` use the MODERN 0-31 / 0-252 scale, matching the rest of this
+ * app's UI. Internally they are reinterpreted as Gen 1 DVs (0-15) and Stat
+ * Experience (0-65535) — a caller passing authentic Gen 1 DVs directly
+ * would get them silently halved. */
 export interface Gen1MatchupAttacker {
   species: string;
   level: number;
@@ -13,6 +17,9 @@ export interface Gen1MatchupAttacker {
   evs: StatBlock;
 }
 
+/** The defender is always evaluated with perfect DVs (15) and zero Stat
+ * Experience — a fixed convention for worst-case defense, not derived from
+ * any input on this type. */
 export interface Gen1MatchupDefender {
   species: string;
   level: number;
@@ -24,6 +31,11 @@ export interface Gen1MatchupInput {
   defender: Gen1MatchupDefender;
 }
 
+/** `hitsToKO.min`/`.max` can be `Infinity` (e.g. a type-immune matchup, or
+ * a damage range that is genuinely `{min:0,max:0}` under Gen 1's no-floor
+ * rule) despite the plain `number` type. Callers serializing this (e.g.
+ * `JSON.stringify`, a Server Action boundary) should be aware `Infinity`
+ * serializes to `null`. */
 export interface Gen1MatchupOutcome {
   damageRange: { min: number; max: number };
   hitsToKO: { min: number; max: number };
@@ -31,6 +43,7 @@ export interface Gen1MatchupOutcome {
 
 export interface Gen1MatchupResult {
   normal: Gen1MatchupOutcome;
+  /** `chance` is a probability in [0, 1], not a percentage. */
   criticalHit: { chance: number } & Gen1MatchupOutcome;
   moveOrder: "attacker" | "defender" | "tie";
 }
@@ -98,6 +111,9 @@ function outcomeFor(
   return { damageRange, hitsToKO };
 }
 
+/** Returns `null` if any species/move lookup fails, the move is a status
+ * move, or a species has no historically-valid Gen 1 typing (see
+ * `getGen1Types`). */
 export async function evaluateGen1Matchup(
   input: Gen1MatchupInput
 ): Promise<Gen1MatchupResult | null> {
