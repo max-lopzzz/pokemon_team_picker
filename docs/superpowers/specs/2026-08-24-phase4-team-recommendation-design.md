@@ -46,6 +46,21 @@ one shape the scoring logic can treat uniformly.
   moves (from `encounter_pokemon_moves` — real data, not a guess) is most
   threatening against your specific Pokémon, not just its first-listed
   move. Safer default for a recommendation tool.
+- **Opponent's own stats**: the gym leader's Pokémon has no roster-style
+  IV/EV/nature data anywhere in this app (only species/level/moves/held
+  item/dynamax) — but every battle engine's attacker interface requires
+  those inputs regardless of which side is attacking. When the gym
+  Pokémon is the attacker (i.e. when computing how much damage IT deals
+  to you), it gets the exact same convention every Phase 3 engine already
+  applies when a trainer Pokémon is the *defender*: perfect IVs, zero
+  EVs, neutral nature. One consistent rule for "a trainer Pokémon with no
+  real stat data," regardless of which side of the exchange it's on, in
+  both directions. **Known limitation**: real trainer teams in the actual
+  games often do invest EVs, so this can understate the opponent's true
+  damage output — the recommendation may be modestly more optimistic
+  about your survival odds than an actual battle would be. Not solved
+  here; flagged, matching this app's established pattern of documenting
+  known approximations rather than silently asserting them away.
 - **Critical hits**: scoring uses only the `normal` (non-crit) outcome
   from every engine, uniformly — `matchup.ts` has nothing else to use
   anyway, so this keeps the scoring formula identical across all four
@@ -299,9 +314,11 @@ All in `web/src/core/`, plus one new UI piece:
   6. For each (usable roster Pokémon, scoreable opponent) pair: compute
      `theirMatchups` once (their moveset attacking my roster Pokémon —
      this doesn't depend on which of MY moves I'd use, so it's computed
-     once per pair, not once per my-move), then `myMatchups` (one
-     `evaluateNormalizedMatchup` call per roster-move). Feed both into
-     `scoreMatchup` to build the matrix cell.
+     once per pair, not once per my-move; the opponent-as-attacker uses
+     the perfect-IV/zero-EV/neutral-nature convention described above),
+     then `myMatchups` (one `evaluateNormalizedMatchup` call per
+     roster-move, using the roster Pokémon's own real ivs/evs/nature as
+     attacker). Feed both into `scoreMatchup` to build the matrix cell.
   7. `assembleTeam` on the resulting matrix, using only the usable
      roster and scoreable opponents — its `AssembledTeam` result, step
      5's null-level opponents, and step 3's `excludedRosterPokemon` list
