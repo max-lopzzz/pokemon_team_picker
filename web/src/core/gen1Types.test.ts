@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { getGen1Types } from "./gen1Types";
+import { getGen1Types, getHistoricalTypes } from "./gen1Types";
 
 describe("getGen1Types", () => {
   let cacheDir: string;
@@ -124,5 +124,108 @@ describe("getGen1Types", () => {
     expect(first).toBeNull();
     expect(second).toBeNull();
     expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("getHistoricalTypes", () => {
+  let cacheDir: string;
+
+  beforeEach(async () => {
+    cacheDir = await fs.mkdtemp(path.join(os.tmpdir(), "historicaltypes-cache-"));
+  });
+
+  afterEach(async () => {
+    await fs.rm(cacheDir, { recursive: true, force: true });
+  });
+
+  // One species with two historical typing changes (recorded at
+  // generation-ii and generation-iv), so a single fixture proves the
+  // "smallest qualifying entry" selection rule across five target
+  // generations at once.
+  function mockMultiCheckpointSpecies() {
+    return vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        types: [{ type: { name: "dark" } }],
+        past_types: [
+          {
+            generation: { name: "generation-ii" },
+            types: [{ type: { name: "normal" } }],
+          },
+          {
+            generation: { name: "generation-iv" },
+            types: [{ type: { name: "psychic" } }],
+          },
+        ],
+      }),
+    });
+  }
+
+  it("generation=1: selects the earliest qualifying entry (generation-ii, since 2 >= 1)", async () => {
+    const fetchImpl = mockMultiCheckpointSpecies();
+    const result = await getHistoricalTypes("TestMon", 1, { cacheDir, fetchImpl });
+    expect(result).toEqual(["normal"]);
+  });
+
+  it("generation=2: still selects the generation-ii entry (2 >= 2)", async () => {
+    const fetchImpl = mockMultiCheckpointSpecies();
+    const result = await getHistoricalTypes("TestMon", 2, { cacheDir, fetchImpl });
+    expect(result).toEqual(["normal"]);
+  });
+
+  it("generation=3: generation-ii no longer qualifies (2 < 3), selects generation-iv instead (4 >= 3)", async () => {
+    const fetchImpl = mockMultiCheckpointSpecies();
+    const result = await getHistoricalTypes("TestMon", 3, { cacheDir, fetchImpl });
+    expect(result).toEqual(["psychic"]);
+  });
+
+  it("generation=4: still selects the generation-iv entry (4 >= 4)", async () => {
+    const fetchImpl = mockMultiCheckpointSpecies();
+    const result = await getHistoricalTypes("TestMon", 4, { cacheDir, fetchImpl });
+    expect(result).toEqual(["psychic"]);
+  });
+
+  it("generation=5: no entry qualifies (2 < 5 and 4 < 5), falls back to current types", async () => {
+    const fetchImpl = mockMultiCheckpointSpecies();
+    const result = await getHistoricalTypes("TestMon", 5, { cacheDir, fetchImpl });
+    expect(result).toEqual(["dark"]);
+  });
+
+  it("rejects a Dark type at generation 1 (didn't exist yet) but accepts it from generation 2 onward", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ types: [{ type: { name: "dark" } }] }),
+    });
+
+    const atGen1 = await getHistoricalTypes("Umbreon", 1, { cacheDir, fetchImpl });
+    const atGen2 = await getHistoricalTypes("Umbreon", 2, { cacheDir, fetchImpl });
+
+    expect(atGen1).toBeNull();
+    expect(atGen2).toEqual(["dark"]);
+  });
+
+  it("rejects a Fairy type before generation 6, but accepts it from generation 6 onward", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ types: [{ type: { name: "fairy" } }] }),
+    });
+
+    const atGen3 = await getHistoricalTypes("Sylveon", 3, { cacheDir, fetchImpl });
+    const atGen6 = await getHistoricalTypes("Sylveon", 6, { cacheDir, fetchImpl });
+
+    expect(atGen3).toBeNull();
+    expect(atGen6).toEqual(["fairy"]);
+  });
+
+  it("uses a generation-specific cache key, so a Gen 1 lookup and a Gen 3 lookup for the same species don't collide", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ types: [{ type: { name: "water" } }] }),
+    });
+
+    await getHistoricalTypes("Squirtle", 1, { cacheDir, fetchImpl });
+    await getHistoricalTypes("Squirtle", 3, { cacheDir, fetchImpl });
+
+    expect(fetchImpl).toHaveBeenCalledTimes(2);
   });
 });
