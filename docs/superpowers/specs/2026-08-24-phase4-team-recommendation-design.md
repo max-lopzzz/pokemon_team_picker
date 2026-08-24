@@ -93,7 +93,12 @@ All in `web/src/core/`, plus one new UI piece:
 
   export interface MatchupDefenderInput {
     species: string;
-    level: number | null;
+    level: number; // NOT nullable — every underlying engine requires a
+      // real level. EncounterPokemon.level is `number | null`; the
+      // caller (the action, see below) filters out null-level opponents
+      // BEFORE ever constructing one of these, so this type intentionally
+      // pushes that check to compile time rather than accepting `null`
+      // here and re-deciding what to do with it at runtime.
     dynamaxState?: string | null; // only meaningful for generation 6-9
   }
 
@@ -137,8 +142,12 @@ All in `web/src/core/`, plus one new UI piece:
   export interface MatchupScore {
     score: number; // higher is better; see formula below
     move: string;
-    myHitsToKO: number; // averaged from the range
-    theirHitsToKoTaken: number; // averaged from the range, worst-case (fewest-hits) of their moves
+    myHitsToKO: { min: number; max: number }; // the ORIGINAL range, not
+      // averaged — kept for display ("2-3 hits to KO"), clamped (see
+      // HITS_TO_KO_SENTINEL below) so no raw Infinity ever appears here
+    theirHitsToKoTaken: { min: number; max: number }; // same clamping,
+      // taken from whichever of their moves needs the fewest hits (worst
+      // case for me)
     movesFirst: "attacker" | "defender" | "tie";
   }
 
@@ -149,16 +158,31 @@ All in `web/src/core/`, plus one new UI piece:
   ```
 
   `scoreMatchup`'s exact order of operations — `theirHitsToKoTaken` is a
-  single fixed number for this pairing (it doesn't depend on which of my
+  single fixed range for this pairing (it doesn't depend on which of my
   moves I'd pick), computed first; then each of my candidate moves is
-  scored against that fixed number, and the best-scoring one wins:
+  scored against that fixed range's average, and the best-scoring one
+  wins. Clamping happens BEFORE anything is stored on the result, not
+  just internally for the score formula — `MatchupScore` is nested inside
+  `TeamRecommendation`, which is what `getTeamRecommendationAction`
+  returns across the Server Action boundary, and `gen1Matchup.ts`'s own
+  JSDoc already warns that `Infinity` silently serializes to `null` there
+  (`JSON.stringify(Infinity) === "null"`) — a raw, un-clamped `Infinity`
+  reaching the client would silently vanish instead of rendering as
+  "can't KO this":
 
   ```ts
-  const HITS_TO_KO_SENTINEL = 1000; // stands in for Infinity so subtraction never produces NaN
+  const HITS_TO_KO_SENTINEL = 1000; // stands in for Infinity — both so
+    // subtraction never produces NaN, and so this value survives the
+    // Server Action boundary as a real (very large) number instead of
+    // silently becoming null
+
+  function clampRange(range: { min: number; max: number }): { min: number; max: number } {
+    const clamp = (n: number) => (n === Infinity ? HITS_TO_KO_SENTINEL : n);
+    return { min: clamp(range.min), max: clamp(range.max) };
+  }
 
   function averageHits(range: { min: number; max: number }): number {
-    const clamp = (n: number) => (n === Infinity ? HITS_TO_KO_SENTINEL : n);
-    return (clamp(range.min) + clamp(range.max)) / 2;
+    return (range.min + range.max) / 2; // call only on an already-clamped range
   }
 
   function matchupScore(
@@ -173,14 +197,19 @@ All in `web/src/core/`, plus one new UI piece:
   export function scoreMatchup(myMatchups, theirMatchups): MatchupScore | null {
     if (myMatchups.length === 0 || theirMatchups.length === 0) return null;
 
-    // Fixed for this pairing: the fewest hits any of their moves needs to KO me.
-    const theirHitsToKoTaken = Math.min(...theirMatchups.map((m) => averageHits(m.hitsToKO)));
+    // Fixed for this pairing: whichever of their moves needs the fewest
+    // hits to KO me (compare by average, keep the full clamped range).
+    const theirClampedRanges = theirMatchups.map((m) => clampRange(m.hitsToKO));
+    const theirHitsToKoTaken = theirClampedRanges.reduce((worst, r) =>
+      averageHits(r) < averageHits(worst) ? r : worst
+    );
+    const theirAvg = averageHits(theirHitsToKoTaken);
 
-    // Best of my candidate moves, scored against that fixed number.
+    // Best of my candidate moves, scored against that fixed average.
     let best: MatchupScore | null = null;
     for (const { move, result } of myMatchups) {
-      const myHitsToKO = averageHits(result.hitsToKO);
-      const score = matchupScore(myHitsToKO, theirHitsToKoTaken, result.movesFirst);
+      const myHitsToKO = clampRange(result.hitsToKO);
+      const score = matchupScore(averageHits(myHitsToKO), theirAvg, result.movesFirst);
       if (!best || score > best.score) {
         best = { score, move, myHitsToKO, theirHitsToKoTaken, movesFirst: result.movesFirst };
       }
